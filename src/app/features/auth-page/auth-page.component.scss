@@ -1,0 +1,83 @@
+@use "../styles/abstracts/variables" as *;
+@use "../styles/abstracts/mixins" as mixin;
+
+.container {
+  display: flex;
+  height: 100vh;
+  min-height: 500px;
+}
+
+.graphic-section,
+.login-section {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graphic-section {
+  background: rgb(40, 184, 40);
+  color: white;
+
+  .graphic-content {
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+  }
+}
+
+.login-section {
+  background-color: #f8f9fa;
+
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+
+    mat-card-header {
+      text-align: center;
+    }
+
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    mat-card-actions {
+      justify-content: center;
+
+      button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@include mixin.response("md") {
+  .container {
+    flex-direction: column;
+  }
+
+  .graphic-section,
+  .login-section {
+    height: 50vh;
+  }
+
+  .graphic-content h1 {
+    font-size: 2rem;
+  }
+
+  .graphic-content p {
+    font-size: 1rem;
+  }
+}
