@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginLayoutComponent } from './layout/login-layout/login-layout.component';
 import { SecureLayoutComponent } from './layout/secure-layout/secure-layout.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -16,11 +17,12 @@ export const routes: Routes = [
   {
     path: '',
     component: SecureLayoutComponent,
+    canMatch: [authGuard],
     children: [
-      // {
-      //   path: 'dashboard']
-      //   loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
-      // },
+      {
+        path: 'dashboard',
+        loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
+      },
     ],
   },
   {
