@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { AuthPageComponent } from "../../features/auth-page/auth-page.component";
 
 @Component({

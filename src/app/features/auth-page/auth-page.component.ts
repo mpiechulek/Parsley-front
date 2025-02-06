@@ -25,7 +25,7 @@ interface LoginForm {
 export type LoginFormControls = ToFormGroup<LoginForm>;
 
 @Component({
-  selector: 'pars-auth-page',
+  selector: 'app-auth-page',
   imports: [
     CommonModule,
     FormsModule,
@@ -70,6 +70,8 @@ export class AuthPageComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const formData = this.loginForm.value;
+      console.log(formData);
+
     }
   }
 }
