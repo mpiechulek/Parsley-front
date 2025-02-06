@@ -17,19 +17,20 @@
           <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" type="email" />
-            <mat-error
-              *ngIf="emailFormControl.errors?.['email'] && !emailFormControl.errors?.['required']"
-            >
-              Please enter a valid email address
-            </mat-error>
+            @if (
+              emailFormControl.errors?.['email'] &&
+              !emailFormControl.errors?.['required']
+            ) {
+              <mat-error> Please enter a valid email address </mat-error>
+            }
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password" type="password" />
-            <mat-error *ngIf="passwordFormControl.errors?.['required']">
-              Password is required
-            </mat-error>
+            @if (passwordFormControl.errors?.['required']) {
+              <mat-error> Password is required </mat-error>
+            }
           </mat-form-field>
         </form>
       </mat-card-content>

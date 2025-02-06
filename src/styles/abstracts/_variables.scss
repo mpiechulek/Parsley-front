@@ -1,16 +1,106 @@
-$primary-color: #2bec89;
-$accent-color: #8a5cc2;
-$alert-color: #ff9012;
-$error-color: #e11b1b;
+@use 'sass:map';
 
-// Declaring color with shades (material design pink)
-$pink-color-50: #fce4ec;
-// ... Shades 100-700
-$pink-color-800: #ad1457;
-$pink-color-900: #880e4f;
+// Green Palette
+$green-100: #e8f5e9; // Lightest
+$green-200: #c8e6c9; // Light
+$green-300: #a5d6a7; // Medium-light
+$green-400: #81c784; // Medium
+$green-500: #66bb6a; // Base (Primary)
+$green-600: #43a047; // Medium-dark
+$green-700: #388e3c; // Dark
+$green-800: #2e7d32; // Darkest
 
-$space-xs: 4px;
-$space-s: 8px;
-$space-md: 12px;
-$space-lg: 16px;
-$space-xl: 20px;
+// Gray Palette
+$gray-100: #ffffff; // White
+$gray-200: #fafafa; // Lightest
+$gray-300: #f5f5f5; // Light
+$gray-400: #eeeeee; // Medium-light
+$green-500: #e0e0e0; // Base
+$gray-600: #bdbdbd; // Medium-dark
+$gray-700: #757575; // Dark
+$gray-800: #424242; // Darkest
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+$spacing-unit: 10px;
+
+// Font size calculations
+$font-size-display-xl: $spacing-unit * 4; // 40px
+$font-size-display-lg: $spacing-unit * 3.5; // 25px
+$font-size-display-md: $spacing-unit * 3; // 30px
+$font-size-display-sm: $spacing-unit * 2.5; // 25px
+
+$font-size-h1-xl: $spacing-unit * 2.5; // 20px
+$font-size-h1-lg: $spacing-unit * 2.25; // 18px
+$font-size-h1-md: $spacing-unit * 2; // 16px
+$font-size-h1-sm: $spacing-unit * 1.75; // 14px
+
+$font-size-body-xl: $spacing-unit * 2; // 16px
+$font-size-body-lg: $spacing-unit * 1.875; // 15px
+$font-size-body-md: $spacing-unit * 1.75; // 14px
+
+// Typography maps for easy usage
+$typography-scales: (
+  'display-xl': $font-size-display-xl,
+  'display-lg': $font-size-display-lg,
+  'display-md': $font-size-display-md,
+  'display-sm': $font-size-display-sm,
+
+  'heading-xl': $font-size-h1-xl,
+  'heading-lg': $font-size-h1-lg,
+  'heading-md': $font-size-h1-md,
+  'heading-sm': $font-size-h1-sm,
+
+  'body-xl': $font-size-body-xl,
+  'body-lg': $font-size-body-lg,
+  'body-md': $font-size-body-md,
+);
+
+// Global typography styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Arial', sans-serif;
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: map.get($typography-scales, 'heading-xl');
+}
+h2 {
+  font-size: map.get($typography-scales, 'heading-lg');
+}
+h3 {
+  font-size: map.get($typography-scales, 'heading-md');
+}
+h4 {
+  font-size: map.get($typography-scales, 'heading-sm');
+}
+
+p {
+  font-family: 'Arial', sans-serif;
+  font-size: map.get($typography-scales, 'body-md');
+  line-height: 1.5;
+  margin-bottom: $spacing-sm;
+}
+
+// Responsive typography mixin
+@mixin responsive-font-size($scale-name) {
+  font-size: map.get($typography-scales, $scale-name);
+
+  @media (max-width: $breakpoint-md) {
+    font-size: calc(map.get($typography-scales, $scale-name) * 0.875);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: calc(map.get($typography-scales, $scale-name) * 0.8125);
+  }
+}
