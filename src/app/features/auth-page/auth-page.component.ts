@@ -1,5 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, FormRecord, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -11,7 +18,7 @@ type ToFormGroup<T> = {
 };
 
 interface LoginForm {
-  email: string  |null;
+  email: string | null;
   password: string | null;
 }
 
@@ -32,36 +39,37 @@ export type LoginFormControls = ToFormGroup<LoginForm>;
   styleUrl: './auth-page.component.scss',
 })
 export class AuthPageComponent {
-  loginForm: FormGroup<LoginFormControls> = this.initializeForm();
   formBuilder: FormBuilder = inject(FormBuilder);
+  loginForm: FormGroup<LoginFormControls> = this.initializeForm();
 
-
-  private initializeForm() {
-    return this.loginForm = this.formBuilder.group<LoginFormControls>({
-      email: new FormControl('', [
-        Validators.required,
-        Validators.email
-      ]),
+  /**
+   *
+   * @returns
+   */
+  private initializeForm(): FormGroup<LoginFormControls> {
+    return this.formBuilder?.group<LoginFormControls>({
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(6)
-      ])
+        Validators.minLength(6),
+      ]),
     });
   }
 
-  get emailFormControl() {
+  get emailFormControl(): FormControl<string> {
     return this.loginForm.get('email') as FormControl;
   }
 
-  get passwordFormControl() {
+  get passwordFormControl(): FormControl<string> {
     return this.loginForm.get('password') as FormControl;
   }
 
+  /**
+   *
+   */
   onSubmit(): void {
     if (this.loginForm.valid) {
       const formData = this.loginForm.value;
-      console.log('Login submitted:', formData);
-      // Add your authentication logic here
     }
   }
 }
