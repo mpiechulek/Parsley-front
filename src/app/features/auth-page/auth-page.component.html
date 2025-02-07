@@ -5,46 +5,31 @@
       <p>To your private meal manager</p>
     </div>
   </div>
-
   <div class="login-section">
-    <mat-card class="login-form">
-      <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-      </mat-card-header>
-
-      <mat-card-content>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="email" type="email" />
-            @if (
-              emailFormControl.errors?.['email'] &&
-              !emailFormControl.errors?.['required']
-            ) {
-              <mat-error> Please enter a valid email address </mat-error>
-            }
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput formControlName="password" type="password" />
-            @if (passwordFormControl.errors?.['required']) {
-              <mat-error> Password is required </mat-error>
-            }
-          </mat-form-field>
-        </form>
-      </mat-card-content>
-
-      <mat-card-actions>
-        <button
-          mat-raised-button
-          color="primary"
-          type="submit"
-          [disabled]="!loginForm.valid"
+    @if (chosenFormType === 'login') {
+      <app-login-form (authAction)="onAuthorize($event)"/>
+      <p class="auth-info">
+        Don't have an account yet?
+        <a
+          tabindex="0"
+          (keypress)="onChoseFormType('signup')"
+          (click)="onChoseFormType('signup')"
+          >Sign Up</a
         >
-          Login
-        </button>
-      </mat-card-actions>
-    </mat-card>
+      </p>
+    } @else if (chosenFormType === 'signup') {
+      <app-signup-form (authAction)="onAuthorize($event)" />
+      <p class="auth-info">
+        Have an account already.
+        <a
+          tabindex="0"
+          (keypress)="onChoseFormType('login')"
+          (click)="onChoseFormType('login')"
+          >Log In</a
+        >
+      </p>
+    } @else if(error) {
+      <p>Form error!</p>
+    }
   </div>
 </div>

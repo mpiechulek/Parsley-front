@@ -1,28 +1,15 @@
-import { Component, inject } from '@angular/core'
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms'
-import { MatCardModule } from '@angular/material/card'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
-import { MatButtonModule } from '@angular/material/button'
-import { CommonModule } from '@angular/common'
-
-type ToFormGroup<T> = {
-  [P in keyof T]: FormControl<T[P]>
-}
-
-interface LoginForm {
-  email: string | null
-  password: string | null
-}
-
-export type LoginFormControls = ToFormGroup<LoginForm>
+import { Component, inject } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { AuthAction } from '@models/auth-form.model';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-auth-page',
@@ -34,46 +21,43 @@ export type LoginFormControls = ToFormGroup<LoginForm>
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
+    LoginFormComponent,
+    SignupFormComponent,
   ],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
 })
 export class AuthPageComponent {
-  formBuilder: FormBuilder = inject(FormBuilder)
-  loginForm: FormGroup<LoginFormControls> = this.initializeForm()
-  private passwordPattern =
-    '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'
+  authService = inject(AuthService);
+  chosenFormType: 'login' | 'signup' = 'login';
+  error: string | null = null;
 
   /**
    *
-   * @returns
+   * @param type
    */
-  private initializeForm(): FormGroup<LoginFormControls> {
-    return this.formBuilder?.group<LoginFormControls>({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        // Validators.minLength(8),
-        Validators.pattern(this.passwordPattern),
-      ]),
-    })
-  }
-
-  get emailFormControl(): FormControl<string> {
-    return this.loginForm.get('email') as FormControl
-  }
-
-  get passwordFormControl(): FormControl<string> {
-    return this.loginForm.get('password') as FormControl
+  onChoseFormType(type: 'login' | 'signup'): void {
+    this.chosenFormType = type;
   }
 
   /**
    *
+   * @param action
    */
-  onSubmit(): void {
-    if (this.loginForm.valid) {
-      const formData = this.loginForm.value
-      console.log(formData)
+  onAuthorize(action: AuthAction): void {
+    const email = action.payload.email;
+    const password = action.payload.password;
+    if (email && password) {
+      if (action.type === 'login') {
+        console.log('Login:', action.payload);
+        this.authService.loginUser(email, password);
+      }
+      if (action.type === 'signup') {
+        console.log('Signup:', action.payload);
+        if (action.payload.email)
+          this.authService.signUpNewUser(email, password);
+      }
     }
   }
 }
