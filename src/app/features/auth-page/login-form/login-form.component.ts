@@ -14,7 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AuthAction, AuthFormControls } from '@models/auth-form.model';
 import { AuthFormType } from '../../../core/models/auth-form.model';
-import { SpinnerComponent } from 'app/shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-login-form',
@@ -26,7 +25,6 @@ import { SpinnerComponent } from 'app/shared/components/spinner/spinner.componen
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    SpinnerComponent
   ],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
