@@ -24,8 +24,8 @@
       "@guards/*": ["app/core/guards/*"],
       "@models/*": ["app/core/models/*"],
       "@layout/*": ["app/layout/*"],
+      "@shared/*": ["app/shared/*"],
       "@environments/*": ["environments/*"],
-
     }
   },
   "angularCompilerOptions": {
