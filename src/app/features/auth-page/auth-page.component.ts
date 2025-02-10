@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AuthAction } from '@models/auth-form.model';
-import { AuthService } from '../../core/services/auth.service';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { GlobalStore } from 'app/state/global.state';
 
 @Component({
   selector: 'app-auth-page',
@@ -24,12 +25,13 @@ import { AuthService } from '../../core/services/auth.service';
     MatIconModule,
     LoginFormComponent,
     SignupFormComponent,
+    SpinnerComponent,
   ],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
 })
 export class AuthPageComponent {
-  authService = inject(AuthService);
+  readonly globalStore = inject(GlobalStore);
   chosenFormType: 'login' | 'signup' = 'login';
   error: string | null = null;
 
@@ -50,13 +52,10 @@ export class AuthPageComponent {
     const password = action.payload.password;
     if (email && password) {
       if (action.type === 'login') {
-        console.log('Login:', action.payload);
-        this.authService.loginUser(email, password);
+        this.globalStore.loginUser(email, password);
       }
-      if (action.type === 'signup') {
-        console.log('Signup:', action.payload);
-        if (action.payload.email)
-          this.authService.signUpNewUser(email, password);
+      if (action.type === 'signup' && action.payload.password) {
+        this.globalStore.signUpNewUser(email, password);
       }
     }
   }

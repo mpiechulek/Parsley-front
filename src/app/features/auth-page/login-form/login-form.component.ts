@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AuthAction, AuthFormControls } from '@models/auth-form.model';
 import { AuthFormType } from '../../../core/models/auth-form.model';
+
 @Component({
   selector: 'app-login-form',
   imports: [

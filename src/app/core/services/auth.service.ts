@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -15,13 +16,8 @@ export class AuthService {
    * @param email
    * @param password
    */
-  loginUser(email: string, password: string): void {
-    this.httpClient
-      .post(`${this.apiUrl}/api/login`, { email, password })
-      .subscribe((res) => {
-        this.isUserValid.set(true);
-        console.log(res);
-      });
+  loginUser(email: string, password: string): Observable<{ token: string }> {
+    return this.httpClient.post<{token: string}>(`${this.apiUrl}/api/login`, { email, password });
   }
 
   /**
@@ -29,11 +25,7 @@ export class AuthService {
    * @param email
    * @param password
    */
-  signUpNewUser(email: string, password: string) {
-    this.httpClient
-      .post(`${this.apiUrl}/api/signup`, { email, password })
-      .subscribe((res) => {
-        console.log(res);
-      });
+  signUpNewUser(email: string, password: string): Observable<{ token: string }> {
+    return this.httpClient.post<{token: string}>(`${this.apiUrl}/api/signup`, { email, password });
   }
 }

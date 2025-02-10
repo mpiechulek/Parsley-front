@@ -6,30 +6,36 @@
     </div>
   </div>
   <div class="login-section">
-    @if (chosenFormType === 'login') {
-      <app-login-form (authAction)="onAuthorize($event)"/>
-      <p class="auth-info">
-        Don't have an account yet?
-        <a
-          tabindex="0"
-          (keypress)="onChoseFormType('signup')"
-          (click)="onChoseFormType('signup')"
-          >Sign Up</a
-        >
-      </p>
-    } @else if (chosenFormType === 'signup') {
-      <app-signup-form (authAction)="onAuthorize($event)" />
-      <p class="auth-info">
-        Have an account already.
-        <a
-          tabindex="0"
-          (keypress)="onChoseFormType('login')"
-          (click)="onChoseFormType('login')"
-          >Log In</a
-        >
-      </p>
-    } @else if(error) {
-      <p>Form error!</p>
-    }
+    <div class="login-wrapper">
+      @if (globalStore.isLoading()) {
+        <app-spinner />
+      }
+
+      @if (chosenFormType === 'login') {
+        <app-login-form
+          (authAction)="onAuthorize($event)"
+        />
+        <p class="auth-info">
+          Don't have an account yet?
+          <a
+            tabindex="0"
+            (keypress)="onChoseFormType('signup')"
+            (click)="onChoseFormType('signup')"
+            >Sign Up</a
+          >
+        </p>
+      } @else if (chosenFormType === 'signup') {
+        <app-signup-form (authAction)="onAuthorize($event)" />
+        <p class="auth-info">
+          Have an account already.
+          <a
+            tabindex="0"
+            (keypress)="onChoseFormType('login')"
+            (click)="onChoseFormType('login')"
+            >Log In</a
+          >
+        </p>
+      }
+    </div>
   </div>
 </div>
