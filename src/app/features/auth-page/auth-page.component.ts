@@ -1,5 +1,3 @@
-import { Component, inject } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,10 +20,7 @@ import { GlobalStore } from 'app/state/global.state';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule,
-    LoginFormComponent,
-    SignupFormComponent,
-    SpinnerComponent,
+
   ],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
@@ -57,6 +52,7 @@ export class AuthPageComponent {
       if (action.type === 'signup' && action.payload.password) {
         this.globalStore.signUpNewUser(email, password);
       }
+
     }
   }
 }

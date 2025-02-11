@@ -28,4 +28,5 @@ export class AuthService {
   signUpNewUser(email: string, password: string): Observable<{ token: string }> {
     return this.httpClient.post<{token: string}>(`${this.apiUrl}/api/signup`, { email, password });
   }
+
 }
