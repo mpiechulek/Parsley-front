@@ -1,0 +1,62 @@
+<mat-card class="login-form">
+  <mat-card-header>
+    <mat-card-title>Sign Up</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Sign up form -->
+    <form [formGroup]="authForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+        @if (emailError) {
+          <mat-error> Please enter a valid email address </mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          [type]="pwdHide ? 'text' : 'password'"
+        />
+        <button
+        mat-icon-button
+        matSuffix
+        (click)="pwdHide = !pwdHide"
+        [attr.aria-label]="'Hide password'"
+      >
+        <mat-icon>{{ pwdHide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+        @if (passwordError) {
+          <mat-error>
+            Require min. 8 characters including special character,
+            number, uppercase
+          </mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirm password</mat-label>
+        <input
+          matInput
+          formControlName="confirmPassword"
+          [type]="pwdHide ? 'text' : 'password'"
+        />
+        @if (confirmPasswordError) {
+          <mat-error> Passwords are not matching </mat-error>
+        }
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="onSignUp()"
+      (keypress)="onSignUp()"
+      [disabled]="!authForm.valid"
+    >
+      Sign Up
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,6 +1,7 @@
 @forward "abstracts/mixins";
 @forward "abstracts/variables";
-
+@forward "forms/auth-form";
+@forward "materials/snackbar";
 
 // in angular.json -- patch to the folder
 //  "stylePreprocessorOptions": {
