@@ -2,13 +2,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+
 import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AuthAction } from '@models/auth-form.model';
 import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
 import { GlobalStore } from 'app/state/global.state';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-auth-page',
@@ -20,7 +22,9 @@ import { GlobalStore } from 'app/state/global.state';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-
+    SpinnerComponent,
+    SignupFormComponent,
+    LoginFormComponent
   ],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
