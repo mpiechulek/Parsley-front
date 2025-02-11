@@ -59,7 +59,6 @@ export const GlobalStore = signalStore(
         },
         error: (err: HttpErrorResponse) => {
           patchState(store, { isLoading: false, error: err });
-          console.error(err);
         },
       });
     },
