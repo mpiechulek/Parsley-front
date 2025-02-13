@@ -11,6 +11,7 @@ import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { AuthService } from '@services/auth.service';
 import { inject } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 export const initialGlobalState = signalState<GlobalState>({
   appInit: false,
@@ -24,7 +25,7 @@ export const GlobalStore = signalStore(
   { providedIn: 'root' },
   withState<GlobalState>(initialGlobalState),
   withDevtools('globalStore'),
-  withMethods((store, authService = inject(AuthService)) => ({
+  withMethods((store, authService = inject(AuthService), router = inject(Router)) => ({
     stateInit: (): void => {
       patchState(store, { appInit: true });
     },
@@ -33,13 +34,14 @@ export const GlobalStore = signalStore(
         isLoading: true,
       });
       authService.loginUser(email, password).subscribe({
-        next: (res: { token: string }) => {
+        next: () => {
           patchState(store, {
             isLoading: false,
             error: null,
             isUserAuthorized: true,
-            bearerToken: res.token,
           });
+          router.navigate(['/dashboard'])
+
         },
         error: (err: HttpErrorResponse) => {
           patchState(store, { isLoading: false, error: err });
@@ -49,12 +51,11 @@ export const GlobalStore = signalStore(
     },
     signUpNewUser: (email: string, password: string): void => {
       authService.signUpNewUser(email, password).subscribe({
-        next: (res: { token: string }) => {
+        next: () => {
           patchState(store, {
             isLoading: false,
             error: null,
             isUserAuthorized: true,
-            bearerToken: res.token,
           });
         },
         error: (err: HttpErrorResponse) => {

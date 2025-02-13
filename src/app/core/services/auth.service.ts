@@ -1,15 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private httpClient = inject(HttpClient);
-  public isUserValid = signal(false);
   private apiUrl = environment.apiUrl;
+  private bearerToken = signal<string | null>(null);
+  public refreshToken = signal<string | null>(null);
+
+
+  /**
+   *
+   */
+  get getBearerToken(): string | null {
+    return this.bearerToken();
+  }
 
   /**
    *
@@ -17,7 +26,13 @@ export class AuthService {
    * @param password
    */
   loginUser(email: string, password: string): Observable<{ token: string }> {
-    return this.httpClient.post<{token: string}>(`${this.apiUrl}/api/login`, { email, password });
+    return this.httpClient
+      .post<{ token: string }>(`${this.apiUrl}/auth/login`, { email, password })
+      .pipe(
+        tap(({ token }) => {
+          this.bearerToken.set(token);
+        }),
+      );
   }
 
   /**
@@ -25,8 +40,13 @@ export class AuthService {
    * @param email
    * @param password
    */
-  signUpNewUser(email: string, password: string): Observable<{ token: string }> {
-    return this.httpClient.post<{token: string}>(`${this.apiUrl}/api/signup`, { email, password });
+  signUpNewUser(
+    email: string,
+    password: string,
+  ): Observable<{ token: string }> {
+    return this.httpClient.post<{ token: string }>(
+      `${this.apiUrl}/auth/signup`,
+      { email, password },
+    );
   }
-
 }
