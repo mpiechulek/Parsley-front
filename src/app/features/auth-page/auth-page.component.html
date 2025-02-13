@@ -11,27 +11,25 @@
         <app-spinner />
       }
 
-      @if (chosenFormType === 'login') {
-        <app-login-form
-          (authAction)="onAuthorize($event)"
-        />
+      @if (selectedFormType === authFormTypes.LOGIN) {
+        <app-login-form (authAction)="onAuthorize($event)" />
         <p class="auth-info">
           Don't have an account yet?
           <a
             tabindex="0"
-            (keypress)="onChoseFormType('signup')"
-            (click)="onChoseFormType('signup')"
+            (keypress)="onChoseFormType(authFormTypes.SIGNUP)"
+            (click)="onChoseFormType(authFormTypes.SIGNUP)"
             >Sign Up</a
           >
         </p>
-      } @else if (chosenFormType === 'signup') {
+      } @else if (selectedFormType === authFormTypes.SIGNUP) {
         <app-signup-form (authAction)="onAuthorize($event)" />
         <p class="auth-info">
           Have an account already.
           <a
             tabindex="0"
-            (keypress)="onChoseFormType('login')"
-            (click)="onChoseFormType('login')"
+            (keypress)="onChoseFormType(authFormTypes.LOGIN)"
+            (click)="onChoseFormType(authFormTypes.LOGIN)"
             >Log In</a
           >
         </p>

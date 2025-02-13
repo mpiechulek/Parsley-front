@@ -12,7 +12,6 @@ export class AuthService {
   private bearerToken = signal<string | null>(null);
   public refreshToken = signal<string | null>(null);
 
-
   /**
    *
    */
@@ -45,7 +44,7 @@ export class AuthService {
     password: string,
   ): Observable<{ token: string }> {
     return this.httpClient.post<{ token: string }>(
-      `${this.apiUrl}/auth/signup`,
+      `${this.apiUrl}/auth/register`,
       { email, password },
     );
   }

@@ -17,6 +17,7 @@ export const initialGlobalState = signalState<GlobalState>({
   appInit: false,
   isLoading: false,
   isUserAuthorized: false,
+  isSignup: false,
   bearerToken: null,
   error: null,
 });
@@ -25,48 +26,53 @@ export const GlobalStore = signalStore(
   { providedIn: 'root' },
   withState<GlobalState>(initialGlobalState),
   withDevtools('globalStore'),
-  withMethods((store, authService = inject(AuthService), router = inject(Router)) => ({
-    stateInit: (): void => {
-      patchState(store, { appInit: true });
-    },
-    loginUser: (email: string, password: string): void => {
-      patchState(store, {
-        isLoading: true,
-      });
-      authService.loginUser(email, password).subscribe({
-        next: () => {
-          patchState(store, {
-            isLoading: false,
-            error: null,
-            isUserAuthorized: true,
-          });
-          router.navigate(['/dashboard'])
-
-        },
-        error: (err: HttpErrorResponse) => {
-          patchState(store, { isLoading: false, error: err });
-          console.error(err);
-        },
-      });
-    },
-    signUpNewUser: (email: string, password: string): void => {
-      authService.signUpNewUser(email, password).subscribe({
-        next: () => {
-          patchState(store, {
-            isLoading: false,
-            error: null,
-            isUserAuthorized: true,
-          });
-        },
-        error: (err: HttpErrorResponse) => {
-          patchState(store, { isLoading: false, error: err });
-        },
-      });
-    },
-    clearState: (): void => {
-      // set(initialGlobalState);
-    },
-  })),
+  withMethods(
+    (store, authService = inject(AuthService), router = inject(Router)) => ({
+      stateInit: (): void => {
+        patchState(store, { appInit: true });
+      },
+      loginUser: (email: string, password: string): void => {
+        patchState(store, {
+          isLoading: true,
+        });
+        authService.loginUser(email, password).subscribe({
+          next: () => {
+            patchState(store, {
+              isLoading: false,
+              error: null,
+              isUserAuthorized: true,
+            });
+            router.navigate(['/dashboard']);
+          },
+          error: (err: HttpErrorResponse) => {
+            patchState(store, { isLoading: false, error: err });
+            console.error(err);
+          },
+        });
+      },
+      signUpNewUser: (email: string, password: string): void => {
+        patchState(store, {
+          isLoading: true,
+          isSignup: false,
+        });
+        authService.signUpNewUser(email, password).subscribe({
+          next: () => {
+            patchState(store, {
+              isLoading: false,
+              error: null,
+              isSignup: true,
+            });
+          },
+          error: (err: HttpErrorResponse) => {
+            patchState(store, { isLoading: false, error: err });
+          },
+        });
+      },
+      clearState: (): void => {
+        // set(initialGlobalState);
+      },
+    }),
+  ),
   withHooks({
     onInit: ({ stateInit }): void => {
       stateInit();
