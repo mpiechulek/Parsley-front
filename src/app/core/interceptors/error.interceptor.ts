@@ -20,21 +20,33 @@ export const errorInterceptor: HttpInterceptorFn = (
     tap({
       // Handle successful responses
       next: (event) => {
-        if (event instanceof HttpResponse && event.status === 200) {
+        if (
+          event instanceof HttpResponse &&
+          (event.status === 200 || event.status === 201)
+        ) {
           snackBar.open('Operation successful', 'Close', {
             duration: 3000,
             panelClass: 'success-snack',
+            horizontalPosition: 'right',
           });
         }
       },
     }),
-    catchError((error: HttpErrorResponse) => {
-      const errorMessage = getErrorMessage(error);
+    catchError((err: HttpErrorResponse) => {
+      let errorMessage = '';
+
+      if (err && err.error.error && err.error.error.message) {
+        errorMessage = err.error.error.message + ' ' + err.error.error.details;
+      } else {
+        errorMessage = getErrorMessage(err);
+      }
+
       snackBar.open(errorMessage, 'Close', {
         duration: 5000,
         panelClass: 'error-snack',
+        horizontalPosition: 'right',
       });
-      return throwError(() => error);
+      return throwError(() => err);
     }),
   );
 };
