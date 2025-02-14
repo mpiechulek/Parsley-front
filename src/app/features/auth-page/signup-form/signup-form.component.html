@@ -20,17 +20,17 @@
           [type]="pwdHide ? 'text' : 'password'"
         />
         <button
-        mat-icon-button
-        matSuffix
-        (click)="pwdHide = !pwdHide"
-        [attr.aria-label]="'Hide password'"
-      >
-        <mat-icon>{{ pwdHide ? 'visibility_off' : 'visibility' }}</mat-icon>
-      </button>
+          mat-icon-button
+          matSuffix
+          (click)="pwdHide = !pwdHide"
+          [attr.aria-label]="'Hide password'"
+        >
+          <mat-icon>{{ pwdHide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
         @if (passwordError) {
           <mat-error>
-            Require min. 8 characters including special character,
-            number, uppercase
+            Require min. 8 characters including special character, number,
+            uppercase
           </mat-error>
         }
       </mat-form-field>
@@ -56,7 +56,7 @@
       (keypress)="onSignUp()"
       [disabled]="!authForm.valid"
     >
-      Sign Up
+      <mat-icon class="app-mat-icon-scale-1"> add_circle_outline </mat-icon> Sign Up
     </button>
   </mat-card-actions>
 </mat-card>

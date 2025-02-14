@@ -69,7 +69,7 @@ export const GlobalStore = signalStore(
         });
       },
       clearState: (): void => {
-        // set(initialGlobalState);
+        patchState(store, initialGlobalState);
       },
     }),
   ),
@@ -77,5 +77,8 @@ export const GlobalStore = signalStore(
     onInit: ({ stateInit }): void => {
       stateInit();
     },
+    onDestroy: ({ clearState }): void => {
+      clearState();
+    }
   }),
 );
