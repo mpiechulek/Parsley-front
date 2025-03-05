@@ -32,7 +32,7 @@ export class AuthService {
    *
    */
   logout(): Observable<undefined> {
-    return this.httpClient.post<undefined>(`${this.apiUrl}/auth/logout`, {});
+    return this.httpClient.post<undefined>(`${this.apiUrl}/auth/logout`, {}, { withCredentials: true });
   }
 
   /**
@@ -42,7 +42,7 @@ export class AuthService {
    */
   loginUser(email: string, password: string): Observable<{ token: string }> {
     return this.httpClient
-      .post<{ token: string }>(`${this.apiUrl}/auth/login`, { email, password })
+      .post<{ token: string }>(`${this.apiUrl}/auth/login`, { email, password }, { withCredentials: true })
       .pipe(
         tap(({ token }) => {
           this.bearerToken.set(token);
@@ -61,7 +61,7 @@ export class AuthService {
   ): Observable<{ token: string }> {
     return this.httpClient.post<{ token: string }>(
       `${this.apiUrl}/auth/register`,
-      { email, password },
+      { email, password }, { withCredentials: true }
     );
   }
 }

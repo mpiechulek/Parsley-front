@@ -3,6 +3,7 @@ import {
   patchState,
   signalState,
   signalStore,
+  withComputed,
   withHooks,
   withMethods,
   withState,
@@ -74,11 +75,7 @@ export const GlobalStore = signalStore(
       logout: (): void => {
         authService.logout().subscribe({
           next:() => {
-            patchState(store, {
-              isUserAuthorized: false,
-              bearerToken: null,
-            });
-            store['clearState']();
+            patchState(store, initialGlobalState);
             router.navigate(['/login']);
             authService.resetTokens();
           }

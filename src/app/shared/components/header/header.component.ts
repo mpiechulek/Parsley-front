@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AuthService } from '../../../core/services/auth.service';
+import { GlobalStore } from 'app/state/global.state';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +11,12 @@ import { AuthService } from '../../../core/services/auth.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-authService = inject(AuthService);
+  globalStore = inject(GlobalStore);
+
   /**
    *
    */
   onLogout():void {
-    this.authService.logout();
+    this.globalStore.logout();
   }
 }
