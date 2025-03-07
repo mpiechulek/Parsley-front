@@ -3,7 +3,6 @@ import {
   patchState,
   signalState,
   signalStore,
-  withComputed,
   withHooks,
   withMethods,
   withState,
@@ -77,7 +76,7 @@ export const GlobalStore = signalStore(
           next:() => {
             patchState(store, initialGlobalState);
             router.navigate(['/login']);
-            authService.resetTokens();
+            authService.resetToken();
           }
         });
       },

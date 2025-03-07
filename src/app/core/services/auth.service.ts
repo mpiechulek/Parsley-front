@@ -11,8 +11,7 @@ export class AuthService {
   private httpClient = inject(HttpClient);
   private router = inject(Router);
   private apiUrl = environment.apiUrl;
-  private bearerToken = signal<string | null>(null);
-  public refreshToken = signal<string | null>(null);
+  private bearerToken = signal<string | null>('eeeeee');
 
   /**
    *
@@ -24,10 +23,17 @@ export class AuthService {
   /**
    *
    */
-  resetTokens(): void {
-    this.bearerToken.set(null);
-    this.refreshToken.set(null);
+  set setBearerToken(token: string) {
+    this.bearerToken.set(token);
   }
+
+  /**
+   *
+   */
+  resetToken(): void {
+    this.bearerToken.set(null);
+  }
+
   /**
    *
    */
@@ -48,6 +54,16 @@ export class AuthService {
           this.bearerToken.set(token);
         }),
       );
+  }
+
+  /**
+   *
+   * @param email
+   * @param password
+   */
+  refreshToken(): Observable<{ token: string }> {
+    return this.httpClient
+      .post<{ token: string }>(`${this.apiUrl}/auth/refresh`, {}, { withCredentials: true })
   }
 
   /**
