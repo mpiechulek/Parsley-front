@@ -35,7 +35,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
 
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      if (error && error.status === 401 && error.error.message === 'Access Denied. Invalid token.') {
+      if (error.status === 401 && error.error.message === 'Access Denied. Invalid token.') {
         if (!isRefreshing) {
           isRefreshing = true;
           tokenSubject.next(null);
@@ -46,7 +46,6 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
               isRefreshing = false;
               tokenSubject.next(res.token);
               return next(addToken(req, res.token));
-
             }),
             catchError((error) => {
               isRefreshing = false;

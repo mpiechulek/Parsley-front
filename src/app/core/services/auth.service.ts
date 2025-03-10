@@ -11,7 +11,7 @@ export class AuthService {
   private httpClient = inject(HttpClient);
   private router = inject(Router);
   private apiUrl = environment.apiUrl;
-  private bearerToken = signal<string | null>('eeeeee');
+  private bearerToken = signal<string | null>(null);
 
   /**
    *

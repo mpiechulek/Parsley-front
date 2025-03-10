@@ -77,7 +77,13 @@ export const GlobalStore = signalStore(
             patchState(store, initialGlobalState);
             router.navigate(['/login']);
             authService.resetToken();
-          }
+          },
+          error: (err: HttpErrorResponse) => {
+            console.log(err);
+            patchState(store, initialGlobalState);
+            router.navigate(['/login']);
+            authService.resetToken();
+          },
         });
       },
     }),
