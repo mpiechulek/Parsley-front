@@ -57,7 +57,7 @@ const getErrorMessage = (error: HttpErrorResponse): string => {
     case 400:
       return 'Invalid request';
     case 401:
-      return 'Please login to continue';
+      return 'Unauthorized';
     case 403:
       return 'Access denied';
     case 500:
