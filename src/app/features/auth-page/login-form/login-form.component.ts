@@ -42,8 +42,8 @@ export class LoginFormComponent {
    */
   private initializeForm() {
     return this.formBuilder?.group<AuthFormControls>({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
+      email: new FormControl('test@123.com', [Validators.required, Validators.email]),
+      password: new FormControl('1111!Qaa', [Validators.required]),
     });
   }
 

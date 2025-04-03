@@ -9,7 +9,7 @@ import { AuthAction, AuthFormType } from '@models/auth-form.model';
 import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
 import { GlobalStore } from 'app/state/global.state';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, inject, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-auth-page',
@@ -27,6 +27,7 @@ import { Component, effect, inject } from '@angular/core';
   ],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthPageComponent {
   readonly globalStore = inject(GlobalStore);

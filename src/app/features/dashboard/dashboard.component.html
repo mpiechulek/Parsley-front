@@ -1,1 +1,10 @@
 <p>dashboard works!</p>
+<div>
+  @for (item of food() | keyvalue; track item.key) {
+    <div class="nutrition-item">
+      <div class="nutrition-item__label">{{ item.key }}</div>
+      <div class="nutrition-item__value">{{ item.value }}</div>
+    </div>
+    <p>---------------</p>
+  }
+</div>

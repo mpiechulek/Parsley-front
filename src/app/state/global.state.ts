@@ -31,6 +31,9 @@ export const GlobalStore = signalStore(
       stateInit: (): void => {
         patchState(store, { appInit: true });
       },
+      clearState: (): void => {
+        patchState(store, initialGlobalState);
+      },
       loginUser: (email: string, password: string): void => {
         patchState(store, {
           isLoading: true,
@@ -68,8 +71,20 @@ export const GlobalStore = signalStore(
           },
         });
       },
-      clearState: (): void => {
-        // set(initialGlobalState);
+      logout: (): void => {
+        authService.logout().subscribe({
+          next:() => {
+            patchState(store, initialGlobalState);
+            router.navigate(['/login']);
+            authService.resetToken();
+          },
+          error: (err: HttpErrorResponse) => {
+            console.log(err);
+            patchState(store, initialGlobalState);
+            router.navigate(['/login']);
+            authService.resetToken();
+          },
+        });
       },
     }),
   ),
@@ -77,5 +92,8 @@ export const GlobalStore = signalStore(
     onInit: ({ stateInit }): void => {
       stateInit();
     },
+    onDestroy: ({ clearState }): void => {
+      clearState();
+    }
   }),
 );
