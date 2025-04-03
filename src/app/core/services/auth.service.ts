@@ -61,6 +61,7 @@ export class AuthService {
    * @param email
    * @param password
    */
+
   refreshToken(): Observable<{ token: string }> {
     return this.httpClient
       .post<{ token: string }>(`${this.apiUrl}/auth/refresh`, {}, { withCredentials: true })
