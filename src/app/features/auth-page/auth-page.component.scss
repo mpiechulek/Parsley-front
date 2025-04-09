@@ -17,9 +17,7 @@
 }
 
 .graphic-section {
-
   background: $green-600;
-
   color: white;
 
   .graphic-content {
@@ -58,19 +56,16 @@
 }
 
 @include mixin.response('md') {
-
   .container {
     flex-direction: column;
   }
 
-
   .graphic-section {
     flex: 1;
   }
-	
+
   .login-section {
     flex: 3;
-
   }
 
   .graphic-content h1 {
