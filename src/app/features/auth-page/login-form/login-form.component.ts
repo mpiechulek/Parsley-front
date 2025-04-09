@@ -14,7 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AuthAction, AuthFormControls } from '@models/auth-form.model';
 import { AuthFormType } from '../../../core/models/auth-form.model';
-
 @Component({
   selector: 'app-login-form',
   imports: [
@@ -42,7 +41,10 @@ export class LoginFormComponent {
    */
   private initializeForm() {
     return this.formBuilder?.group<AuthFormControls>({
-      email: new FormControl('test@123.com', [Validators.required, Validators.email]),
+      email: new FormControl('test@123.com', [
+        Validators.required,
+        Validators.email,
+      ]),
       password: new FormControl('1111!Qaa', [Validators.required]),
     });
   }

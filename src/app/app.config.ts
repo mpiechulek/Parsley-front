@@ -13,10 +13,10 @@ import { authInterceptor } from './core/interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimationsAsync(),
     provideStore(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideAnimationsAsync(),
     provideHttpClient(
       withFetch(),
       withInterceptors([authInterceptor, errorInterceptor]),
