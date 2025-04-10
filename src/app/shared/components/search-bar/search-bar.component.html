@@ -1,0 +1,27 @@
+<form class="search-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>{{ inputLabelText() }}</mat-label>
+    <input
+      type="text"
+      [placeholder]="inputPlaceholderText()"
+      [attr.aria-label]="inputLabelText()"
+      matInput
+      [formControl]="foodControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      @let options = filteredOptions$ | async;
+      @for (option of options; track option) {
+        <mat-option [value]="option.name">{{ option.name }}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+  <button
+    (click)="getOption()"
+    mat-flat-button
+    class="search-button"
+    [disabled]="!isFormValid"
+  >
+    {{ buttonText() }}
+  </button>
+</form>

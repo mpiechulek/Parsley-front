@@ -8,11 +8,12 @@ import {
 } from '@models/food.model';
 import { ApiService } from '@services/api.service';
 import { FoodStore } from './food-state/food.state';
-// import { httpResource } from '@angular/common/http';
-
+import { httpResource } from '@angular/common/http';
+import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
+import { NutrientsDisplayComponent } from '@shared/components/nutriens-display/nutrients-display.component';
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule],
+  imports: [CommonModule, SearchBarComponent, NutrientsDisplayComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
@@ -32,16 +33,16 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  // readonly postsResource = httpResource<unknown>(
-  //   {
-  //     url: 'http://localhost:3000/api/v1/nutrition',
-  //     method: 'GET',
-  //   },
-  //   {
-  //     // Optional configuration
-  //     defaultValue: [],
-  //   },
-  // );
+  readonly postsResource = httpResource<unknown>(
+    {
+      url: 'http://localhost:3000/api/v1/nutrition',
+      method: 'GET',
+    },
+    {
+      // Optional configuration
+      defaultValue: [],
+    },
+  );
 
   /**
    * Get food details
