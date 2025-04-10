@@ -82,11 +82,13 @@ export interface Minerals {
   chromium: number;
   molybdenum: number;
 }
+
 export interface FoodResponse {
   success: boolean;
   data: FoodModel;
   message: string;
 }
+
 export interface FoodShortModel {
   id: string;
   name: string;
@@ -96,3 +98,4 @@ export interface FoodListShortResponse {
   data: FoodShortModel[];
   message: string;
 }
+

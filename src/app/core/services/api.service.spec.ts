@@ -4,10 +4,12 @@ import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
+
 import { ApiService } from './api.service';
 
 describe('ApiService', () => {
   let service: ApiService;
+
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
@@ -20,6 +22,7 @@ describe('ApiService', () => {
 
   afterEach(() => {
     httpMock.verify();
+
   });
 
   it('should be created', () => {

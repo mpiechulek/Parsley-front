@@ -17,6 +17,7 @@ export class ApiService {
   private apiUrl = environment.apiUrl;
 
   /**
+
    * Fetches the details of a specific food item by its ID.
    *
    * This method sends an HTTP GET request to the API endpoint to retrieve the details

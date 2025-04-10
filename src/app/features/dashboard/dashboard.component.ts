@@ -20,7 +20,6 @@ import { NutrientsDisplayComponent } from '@shared/components/nutriens-display/n
 export class DashboardComponent implements OnInit {
   apiService = inject(ApiService);
   foodStore = inject(FoodStore);
-
   foodData = signal<FoodModel>({} as FoodModel);
   foodSearchList = signal<FoodShortModel[]>([] as FoodShortModel[]);
 
@@ -63,5 +62,6 @@ export class DashboardComponent implements OnInit {
         this.foodSearchList.set(foodSearchList.data);
         this.foodStore.setFoodShortList(foodSearchList.data);
       });
+
   }
 }
