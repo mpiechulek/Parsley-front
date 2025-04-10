@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { Observable, tap } from 'rxjs';
-import { Router } from '@angular/router';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -38,7 +36,11 @@ export class AuthService {
    *
    */
   logout(): Observable<undefined> {
-    return this.httpClient.post<undefined>(`${this.apiUrl}/auth/logout`, {}, { withCredentials: true });
+    return this.httpClient.post<undefined>(
+      `${this.apiUrl}/auth/logout`,
+      {},
+      { withCredentials: true },
+    );
   }
 
   /**
@@ -48,7 +50,13 @@ export class AuthService {
    */
   loginUser(email: string, password: string): Observable<{ token: string }> {
     return this.httpClient
-      .post<{ token: string }>(`${this.apiUrl}/auth/login`, { email, password }, { withCredentials: true })
+      .post<{
+        token: string;
+      }>(
+        `${this.apiUrl}/auth/login`,
+        { email, password },
+        { withCredentials: true },
+      )
       .pipe(
         tap(({ token }) => {
           this.bearerToken.set(token);
@@ -63,8 +71,11 @@ export class AuthService {
    */
 
   refreshToken(): Observable<{ token: string }> {
-    return this.httpClient
-      .post<{ token: string }>(`${this.apiUrl}/auth/refresh`, {}, { withCredentials: true })
+    return this.httpClient.post<{ token: string }>(
+      `${this.apiUrl}/auth/refresh`,
+      {},
+      { withCredentials: true },
+    );
   }
 
   /**
@@ -78,7 +89,8 @@ export class AuthService {
   ): Observable<{ token: string }> {
     return this.httpClient.post<{ token: string }>(
       `${this.apiUrl}/auth/register`,
-      { email, password }, { withCredentials: true }
+      { email, password },
+      { withCredentials: true }
     );
   }
 }

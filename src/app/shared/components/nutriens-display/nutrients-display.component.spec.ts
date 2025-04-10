@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignupFormComponent } from './signup-form.component';
+import { NutrientsDisplayComponent } from './nutrients-display.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
-describe('SignupFormComponent', () => {
-  let component: SignupFormComponent;
-  let fixture: ComponentFixture<SignupFormComponent>;
+describe('NutrientsDisplayComponent', () => {
+  let component: NutrientsDisplayComponent;
+  let fixture: ComponentFixture<NutrientsDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignupFormComponent],
+      imports: [NutrientsDisplayComponent],
       providers: [provideAnimations()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SignupFormComponent);
+    fixture = TestBed.createComponent(NutrientsDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

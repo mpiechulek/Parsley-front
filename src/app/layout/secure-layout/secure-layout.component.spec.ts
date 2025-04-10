@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SecureLayoutComponent } from './secure-layout.component';
+import { GlobalStore } from 'app/state/global.state';
+import { AuthService } from '@services/auth.service';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('SecureLayoutComponent', () => {
   let component: SecureLayoutComponent;
@@ -8,9 +13,15 @@ describe('SecureLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SecureLayoutComponent]
-    })
-    .compileComponents();
+      imports: [SecureLayoutComponent],
+      providers: [
+        GlobalStore,
+        AuthService,
+        provideAnimations(),
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SecureLayoutComponent);
     component = fixture.componentInstance;

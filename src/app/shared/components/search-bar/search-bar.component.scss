@@ -1,0 +1,14 @@
+.search-form {
+  display: flex;
+  max-width: 350px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  .search-button {
+    // font-size: 1.4rem;
+    margin-left: 2rem;
+    height: 56px;
+    width: 120px;
+  }
+}
