@@ -1,46 +1,98 @@
 export interface FoodModel {
   id: string;
   name: string;
-  kcal: number;
+  calories: number;
   water: number;
-  proteinTotal: number;
-  proteinAnimal: number;
-  proteinPlant: number;
-  fat: number;
-  carbs: number;
-  cholesterol: number;
-  glycemicIndex: number;
-  saccharose: number;
-  lactose: number;
-  starch: number;
+  macroNutrients: MacroNutrients;
+  vitamins: Vitamins;
+  minerals: Minerals;
+  glycemic_index: number;
+}
+export interface FoodShortModel {
+  id: string;
+  name: string;
+}
+
+export interface Protein {
+  total: number;
+  animal: number;
+  plant: number;
+}
+
+export interface Fats {
+  total: number;
+  saturated: number;
+  monounsaturated: number;
+  polyunsaturated: number;
+  trans: number;
+}
+
+export interface Sugars {
+  total: number;
+  glucose: number;
+  fructose: number;
+  sucrose: number;
+}
+
+export interface VitaminA {
+  total: number;
+  retinol: number;
+  beta_carotene: number;
+  IU_units: number;
+}
+
+export interface MacroNutrients {
+  protein: Protein;
+  fats: Fats;
+  carbohydrates: number;
+  sugars: Sugars;
   fiber: number;
-  sodium: number;
+  cholesterol: number;
+}
+
+export interface Vitamins {
+  vitamin_C: number;
+  vitamin_A: VitaminA;
+  vitamin_E: number;
+  vitamin_K: number;
+  B1_thiamine: number;
+  B2_riboflavin: number;
+  B3_niacin: number;
+  B5_pantothenic_acid: number;
+  B6_pyridoxine: number;
+  B7_biotin: number;
+  B9_folic_acid: number;
+  B12_cobalamin: number;
+  vitamin_D: number;
+}
+
+export interface Minerals {
   potassium: number;
   calcium: number;
-  phosphorus: number;
   magnesium: number;
+  phosphorus: number;
+  sodium: number;
   iron: number;
   zinc: number;
   copper: number;
   manganese: number;
-  vitRetinolA: number;
-  vitBetaKaroten: number;
-  vitD: number;
-  vitE: number;
-  vitThiamineB1: number;
-  vitRiboflavinB2: number;
-  vitNiacinB3: number;
-  vitB6: number;
-  vitFoliansB9: number;
-  vitB12: number;
-  vitB7:number;
-  vitC: number;
-  vitK: number;
+  selenium: number;
+  iodine: number;
+  fluoride: number;
+  chromium: number;
+  molybdenum: number;
 }
-
 export interface FoodResponse {
   success: boolean;
   data: FoodModel;
   message: string;
 }
-
+export interface FoodShortModel {
+  id: string;
+  name: string;
+}
+export interface FoodListShortResponse {
+  success: boolean;
+  data: FoodShortModel[];
+  message: string;
+}

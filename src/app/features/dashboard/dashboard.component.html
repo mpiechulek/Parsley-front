@@ -1,10 +1,8 @@
-<p>dashboard works!</p>
-<div>
-  @for (item of food() | keyvalue; track item.key) {
-    <div class="nutrition-item">
-      <div class="nutrition-item__label">{{ item.key }}</div>
-      <div class="nutrition-item__value">{{ item.value }}</div>
-    </div>
-    <p>---------------</p>
-  }
-</div>
+<!-- <div class="dashboard">
+  <h1>Pick a food!</h1>
+  <app-search-bar
+    [options]="foodSearchList()"
+    (chosenOption)="getFood($event)"
+  />
+  <app-nutrients-display [nutrientData]="foodData()" />
+</div> -->
