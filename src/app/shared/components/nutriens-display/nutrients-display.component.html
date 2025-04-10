@@ -1,0 +1,186 @@
+<!-- nutrient-list.component.html -->
+<div class="nutrient-container">
+  @if (nutrientData().name) {
+    <h1>Name: {{ nutrientData().name }}</h1>
+    <div class="columns-container">
+      <!-- Other Nutrients Column -->
+      <div class="column other">
+        <h3>Nutrients</h3>
+        <ul class="nutrient-list">
+          <li><strong>Calories:</strong> {{ nutrientData().calories }} kcal</li>
+          <li><strong>Water Content:</strong> {{ nutrientData().water }} %</li>
+          <li>
+            <strong>Total Protein:</strong>
+            {{ nutrientData().macroNutrients.protein.total }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Animal Protein:</strong>
+            {{ nutrientData().macroNutrients.protein.animal }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Plant Protein:</strong>
+            {{ nutrientData().macroNutrients.protein.plant }} g
+          </li>
+          <li>
+            <strong>Total Fats:</strong>
+            {{ nutrientData().macroNutrients.fats.total }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Saturated Fats:</strong>
+            {{ nutrientData().macroNutrients.fats.saturated }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Monounsaturated Fats:</strong>
+            {{ nutrientData().macroNutrients.fats.monounsaturated }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Polyunsaturated Fats:</strong>
+            {{ nutrientData().macroNutrients.fats.polyunsaturated }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Trans Fats:</strong>
+            {{ nutrientData().macroNutrients.fats.trans }} g
+          </li>
+          <li>
+            <strong>Total Carbohydrates:</strong>
+            {{ nutrientData().macroNutrients.carbohydrates }} g
+          </li>
+          <li>
+            <strong>Total Sugars:</strong>
+            {{ nutrientData().macroNutrients.sugars.total }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Glucose:</strong>
+            {{ nutrientData().macroNutrients.sugars.glucose }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Fructose:</strong>
+            {{ nutrientData().macroNutrients.sugars.fructose }} g
+          </li>
+          <li>
+            <strong class="list-item-margin-left">Sucrose:</strong>
+            {{ nutrientData().macroNutrients.sugars.sucrose }} g
+          </li>
+          <li>
+            <strong>Fiber:</strong> {{ nutrientData().macroNutrients.fiber }} g
+          </li>
+          <li>
+            <strong>Cholesterol:</strong>
+            {{ nutrientData().macroNutrients.cholesterol }} mg
+          </li>
+          <li>
+            <strong>Glycemic Index:</strong> {{ nutrientData().glycemic_index }}
+          </li>
+        </ul>
+      </div>
+      <!-- Minerals Column -->
+      <div class="column minerals">
+        <h3>Minerals</h3>
+        <ul class="nutrient-list">
+          <li>
+            <strong>Potassium: </strong>
+            {{ nutrientData().minerals.potassium }} mg
+          </li>
+          <li>
+            <strong>Calcium: </strong> {{ nutrientData().minerals.calcium }} mg
+          </li>
+          <li>
+            <strong>Magnesium: </strong>
+            {{ nutrientData().minerals.magnesium }} mg
+          </li>
+          <li>
+            <strong>Phosphorus: </strong>
+            {{ nutrientData().minerals.phosphorus }} mg
+          </li>
+          <li>
+            <strong>Sodium: </strong> {{ nutrientData().minerals.sodium }} mg
+          </li>
+          <li><strong>Iron :</strong> {{ nutrientData().minerals.iron }} mg</li>
+          <li><strong>Zinc: </strong> {{ nutrientData().minerals.zinc }} mg</li>
+          <li>
+            <strong>Copper: </strong> {{ nutrientData().minerals.copper }} mg
+          </li>
+          <li>
+            <strong>Manganese:</strong>
+            {{ nutrientData().minerals.manganese }} mg
+          </li>
+          <li>
+            <strong>Selenium:</strong> {{ nutrientData().minerals.selenium }} mg
+          </li>
+          <li>
+            <strong>Iodine:</strong> {{ nutrientData().minerals.iodine }} mg
+          </li>
+          <li>
+            <strong>Fluoride:</strong> {{ nutrientData().minerals.fluoride }} mg
+          </li>
+          <li>
+            <strong>Chromium:</strong> {{ nutrientData().minerals.chromium }} mg
+          </li>
+          <li>
+            <strong>Molybdenum:</strong>
+            {{ nutrientData().minerals.molybdenum }} mg
+          </li>
+        </ul>
+      </div>
+
+      <!-- Vitamins Column -->
+      <div class="column vitamins">
+        <h3>Vitamins</h3>
+        <ul class="nutrient-list">
+          <li>
+            <strong>Vitamin C:</strong>
+            {{ nutrientData().vitamins.vitamin_C }} mg
+          </li>
+          <li>
+            <strong>Vitamin A:</strong>
+            {{ nutrientData().vitamins.vitamin_A.total }} mg
+          </li>
+          <li>
+            <strong>Vitamin E:</strong>
+            {{ nutrientData().vitamins.vitamin_E }} mg
+          </li>
+          <li>
+            <strong>Vitamin K:</strong>
+            {{ nutrientData().vitamins.vitamin_K }} mg
+          </li>
+          <li>
+            <strong>B1 Thiamine:</strong>
+            {{ nutrientData().vitamins.B1_thiamine }} mg
+          </li>
+          <li>
+            <strong>B2 Riboflavin:</strong>
+            {{ nutrientData().vitamins.B2_riboflavin }} mg
+          </li>
+          <li>
+            <strong>B3 Niacin:</strong>
+            {{ nutrientData().vitamins.B3_niacin }} mg
+          </li>
+          <li>
+            <strong>B5 Pantothenic Acid: </strong>
+            {{ nutrientData().vitamins.B5_pantothenic_acid }} mg
+          </li>
+          <li>
+            <strong>B6 Pyridoxine:</strong>
+            {{ nutrientData().vitamins.B6_pyridoxine }} mg
+          </li>
+          <li>
+            <strong>B7 Biotin:</strong>
+            {{ nutrientData().vitamins.B7_biotin }} mg
+          </li>
+          <li>
+            <strong>B9 Folic Acid:</strong>
+            {{ nutrientData().vitamins.B9_folic_acid }} mg
+          </li>
+          <li>
+            <strong>B12 Cobalamin:</strong>
+            {{ nutrientData().vitamins.B12_cobalamin }} mg
+          </li>
+          <li>
+            <strong>Vitamin D:</strong>
+            {{ nutrientData().vitamins.vitamin_D }} mg
+          </li>
+        </ul>
+      </div>
+    </div>
+  }
+</div>
