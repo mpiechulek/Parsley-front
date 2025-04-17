@@ -53,6 +53,42 @@ export const routes: Routes = [
           showInNav: true,
         } as RouteData,
       },
+      {
+        path: 'meal-board',
+        loadComponent: () =>
+          import('./features/meal-board/meal-board.component').then(
+            (m) => m.MealBoardComponent,
+          ),
+        data: {
+          title: 'Meal Board',
+          name: 'Meal Board',
+          showInNav: true,
+        } as RouteData,
+      },
+      {
+        path: 'recipes',
+        loadComponent: () =>
+          import('./features/recipes/recipes.component').then(
+            (m) => m.RecipesComponent,
+          ),
+        data: {
+          title: 'Recipes',
+          name: 'Recipes',
+          showInNav: true,
+        } as RouteData,
+      },
+      {
+        path: 'meal-statistics',
+        loadComponent: () =>
+          import('./features/meal-statistics/meal-statistics.component').then(
+            (m) => m.MealStatisticsComponent,
+          ),
+        data: {
+          title: 'Meal Statistics',
+          name: 'Meal Statistics',
+          showInNav: true,
+        } as RouteData,
+      },
     ],
   },
   {
