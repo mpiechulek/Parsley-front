@@ -1,9 +1,8 @@
 .main-container {
-  height: 100%;
+  height: calc(100% - 64px);
 }
 
 .example-sidenav-content {
-  border-left: 1px solid black;
   height: 100%;
 }
 
