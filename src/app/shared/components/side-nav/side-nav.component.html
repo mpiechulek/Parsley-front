@@ -1,11 +1,17 @@
-<!-- <div class="sidenav">
+<div class="sidenav">
   <nav>
     <ul>
-      <li *ngFor="let route of routesForNav">
-        <a routerLinkActive="active">
-          {{ route.name }}
-        </a>
-      </li>
+      @for (route of routesForNav; track route.name) {
+        <li>
+          <a
+            [routerLink]="route.path"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ route.name }}
+          </a>
+        </li>
+      }
     </ul>
   </nav>
-</div> -->
+</div>
