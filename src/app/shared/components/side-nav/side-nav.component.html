@@ -1,0 +1,17 @@
+<div class="sidenav">
+  <nav>
+    <ul>
+      @for (route of routesForNav; track route.name) {
+        <li>
+          <a
+            [routerLink]="route.path"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ route.name }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</div>

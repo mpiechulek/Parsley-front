@@ -45,7 +45,7 @@ export const GlobalStore = signalStore(
               error: null,
               isUserAuthorized: true,
             });
-            router.navigate(['/dashboard']);
+            router.navigate(['/layout/dashboard']);
           },
           error: (err: HttpErrorResponse) => {
             patchState(store, { isLoading: false, error: err });
@@ -73,7 +73,7 @@ export const GlobalStore = signalStore(
       },
       logout: (): void => {
         authService.logout().subscribe({
-          next:() => {
+          next: () => {
             patchState(store, initialGlobalState);
             router.navigate(['/login']);
             authService.resetToken();
@@ -94,6 +94,6 @@ export const GlobalStore = signalStore(
     },
     onDestroy: ({ clearState }): void => {
       clearState();
-    }
+    },
   }),
 );

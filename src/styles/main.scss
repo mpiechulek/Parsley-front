@@ -1,8 +1,9 @@
-@forward "abstracts/mixins";
-@forward "abstracts/variables";
-@forward "forms/auth-form";
-@forward "materials/snackbar";
-@forward "materials/icons";
+@forward 'abstracts/mixins';
+@forward 'abstracts/variables';
+@forward 'forms/auth-form';
+@forward 'materials/snackbar';
+@forward 'materials/icons';
+@forward 'materials/buttons';
 
 // in angular.json -- patch to the folder
 //  "stylePreprocessorOptions": {
@@ -10,4 +11,3 @@
 //     "src/styles"
 //   ]
 // },
-

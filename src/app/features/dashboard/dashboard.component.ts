@@ -7,7 +7,7 @@ import {
   FoodShortModel,
 } from '@models/food.model';
 import { ApiService } from '@services/api.service';
-import { FoodStore } from './food-state/food.state';
+import { FoodStore } from '../food-state/food.state';
 import { httpResource } from '@angular/common/http';
 import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
 import { NutrientsDisplayComponent } from '@shared/components/nutriens-display/nutrients-display.component';
@@ -62,6 +62,5 @@ export class DashboardComponent implements OnInit {
         this.foodSearchList.set(foodSearchList.data);
         this.foodStore.setFoodShortList(foodSearchList.data);
       });
-
   }
 }

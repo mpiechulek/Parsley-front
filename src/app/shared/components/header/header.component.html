@@ -1,11 +1,10 @@
 <mat-toolbar>
-  <button mat-icon-button aria-label="Menu button">
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button aria-label="Menu button" (click)="onToggleSideNav()">
+    <mat-icon class="icon-menu">menu</mat-icon>
   </button>
   <h1>Parsley</h1>
   <span class="example-spacer"></span>
-  <button mat-raised-button aria-label="Logout button" (click)="onLogout()">	
+  <button mat-raised-button aria-label="Logout button" (click)="onLogout()">
     <mat-icon class="app-mat-icon-scale-1">logout</mat-icon> Logout
   </button>
 </mat-toolbar>
-
