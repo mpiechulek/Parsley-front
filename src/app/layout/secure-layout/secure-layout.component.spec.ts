@@ -9,6 +9,7 @@
 // describe('SecureLayoutComponent', () => {
 //   let component: SecureLayoutComponent;
 //   let fixture: ComponentFixture<SecureLayoutComponent>;
+
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
 //       providers: [
@@ -19,10 +20,12 @@
 //         provideHttpClientTesting(),
 //       ],
 //     }).compileComponents();
+
 //     fixture = TestBed.createComponent(SecureLayoutComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
+
 //   it('should create', () => {
 //     expect(component).toBeTruthy();
 //   });
