@@ -1,8 +1,10 @@
 <div class="dashboard">
-  <h1>Pick a food!</h1>
-  <app-search-bar
-    [options]="foodSearchList()"
-    (chosenOption)="getFood($event)"
-  />
-  <app-nutrients-display [nutrientData]="foodData()" />
+  <app-gender-picker />
+  <div class="grid-nav">
+    <div class="grid-nav__item">Food search</div>
+    <div class="grid-nav__item">Today meals</div>
+    <div class="grid-nav__item">Meals search</div>
+    <div class="grid-nav__item">Recipes</div>
+    <div class="grid-nav__item">Statistics</div>
+  </div>
 </div>

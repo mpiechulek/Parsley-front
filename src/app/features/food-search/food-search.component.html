@@ -1,1 +1,8 @@
-<p>food-search works!</p>
+<div class="food-search">
+  <h1>Pick a food!</h1>
+  <app-search-bar
+    [options]="foodSearchList()"
+    (chosenOption)="getFood($event)"
+  />
+  <app-nutrients-display [nutrientData]="foodData()" />
+</div>

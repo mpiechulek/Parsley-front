@@ -1,10 +1,10 @@
 <app-header (toggleSideNav)="onToggleSideNav()" />
 <mat-drawer-container class="main-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer #drawer class="sidenav" mode="side">
     <!-- side nav component placeholder -->
     <app-side-nav />
   </mat-drawer>
-  <div class="example-sidenav-content">
+  <div class="content">
     <router-outlet />
   </div>
 </mat-drawer-container>
