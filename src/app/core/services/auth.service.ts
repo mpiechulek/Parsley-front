@@ -7,7 +7,6 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
   private httpClient = inject(HttpClient);
-  private router = inject(Router);
   private apiUrl = environment.apiUrl;
   private bearerToken = signal<string | null>(null);
 
@@ -90,7 +89,7 @@ export class AuthService {
     return this.httpClient.post<{ token: string }>(
       `${this.apiUrl}/auth/register`,
       { email, password },
-      { withCredentials: true }
+      { withCredentials: true },
     );
   }
 }
