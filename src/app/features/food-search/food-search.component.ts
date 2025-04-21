@@ -25,6 +25,7 @@ export class FoodSearchComponent implements OnInit {
   foodSearchList = signal<FoodShortModel[]>([] as FoodShortModel[]);
 
   ngOnInit(): void {
+    //TODO: Move to secure layout
     // 1. Call the food state and check if the list is there
     if (this.foodStore.foodShortList.length === 0) {
       // 2. If the list is empty, call the getFoodsShortList method
@@ -33,6 +34,7 @@ export class FoodSearchComponent implements OnInit {
     }
   }
 
+  //TODO: Refactor to service call
   readonly postsResource = httpResource<unknown>(
     {
       url: 'http://localhost:3000/api/v1/nutrition',
@@ -53,6 +55,7 @@ export class FoodSearchComponent implements OnInit {
     });
   }
 
+  //TODO: Move call to secure layout
   /**
    * Get food short list
    */
