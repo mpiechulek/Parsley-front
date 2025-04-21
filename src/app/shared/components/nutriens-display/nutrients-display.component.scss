@@ -2,7 +2,10 @@
 .nutrient-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem;
+
+  h2 {
+    font-weight: 500;
+  }
 
   .columns-container {
     display: grid;
@@ -13,6 +16,10 @@
       border-radius: 8px;
       padding: 1.5rem;
       width: 25rem;
+
+      li {
+        padding: 4px;
+      }
 
       // Remove left padding from first column
       &:first-child {

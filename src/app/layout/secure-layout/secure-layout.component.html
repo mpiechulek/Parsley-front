@@ -1,5 +1,5 @@
 <app-header (toggleSideNav)="onToggleSideNav()" />
-<mat-drawer-container class="main-container" autosize>
+<mat-drawer-container class="main-container" [hasBackdrop]="true" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <!-- side nav component placeholder -->
     <app-side-nav />

@@ -1,4 +1,5 @@
 <div class="dashboard">
+  <app-page-header title="Dashboard" />
   <app-gender-picker />
   <div class="grid-nav">
     @for (route of routesForNav; track route.name) {
@@ -11,10 +12,5 @@
         <span>{{ route.name }}</span>
       </a>
     }
-    <!-- <button class="grid-nav__item"><span>Food search</span></button>
-    <button class="grid-nav__item"><span>Today meals</span></button>
-    <button class="grid-nav__item"><span>Meals search</span></button>
-    <button class="grid-nav__item"><span>Recipes</span></button>
-    <button class="grid-nav__item"><span>Statistics</span></button> -->
   </div>
 </div>

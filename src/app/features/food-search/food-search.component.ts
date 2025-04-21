@@ -11,10 +11,16 @@ import { FoodStore } from '../food-state/food.state';
 import { httpResource } from '@angular/common/http';
 import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
 import { NutrientsDisplayComponent } from '@shared/components/nutriens-display/nutrients-display.component';
+import { PageHeaderComponent } from '../../shared/components/page-header/page-header.component';
 
 @Component({
   selector: 'app-food-search',
-  imports: [CommonModule, SearchBarComponent, NutrientsDisplayComponent],
+  imports: [
+    CommonModule,
+    SearchBarComponent,
+    NutrientsDisplayComponent,
+    PageHeaderComponent,
+  ],
   templateUrl: './food-search.component.html',
   styleUrl: './food-search.component.scss',
 })
