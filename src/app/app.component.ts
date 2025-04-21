@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {
   ActivatedRoute,
@@ -6,6 +6,8 @@ import {
   Router,
   RouterOutlet,
 } from '@angular/router';
+import { NavRoutesService } from '@services/nav-routes.service';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +16,15 @@ import {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  navRoutesService = inject(NavRoutesService);
+
   constructor(
     private router: Router,
     private titleService: Title,
     private activatedRoute: ActivatedRoute,
   ) {
+    // Here we are subscribing to the router events to set the title of the page
+    // based on the data property of the route. The title is set to "Parsley | Route Title"
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.titleService.setTitle(
@@ -29,5 +35,9 @@ export class AppComponent {
         );
       }
     });
+    // Generate the routes for the side nav
+    // This is done in the constructor of the NavRoutesService
+    // IN THIS PLACE IT TIS BEING INITIALIZED AGAIN
+    this.navRoutesService.generateRoutesForNav(routes);
   }
 }

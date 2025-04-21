@@ -1,10 +1,20 @@
 <div class="dashboard">
   <app-gender-picker />
   <div class="grid-nav">
-    <button class="grid-nav__item"><span>Food search</span></button>
+    @for (route of routesForNav; track route.name) {
+      <a
+        class="grid-nav__item"
+        [routerLink]="'/layout/' + route.path"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <span>{{ route.name }}</span>
+      </a>
+    }
+    <!-- <button class="grid-nav__item"><span>Food search</span></button>
     <button class="grid-nav__item"><span>Today meals</span></button>
     <button class="grid-nav__item"><span>Meals search</span></button>
     <button class="grid-nav__item"><span>Recipes</span></button>
-    <button class="grid-nav__item"><span>Statistics</span></button>
+    <button class="grid-nav__item"><span>Statistics</span></button> -->
   </div>
 </div>
