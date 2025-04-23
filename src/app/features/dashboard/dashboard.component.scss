@@ -25,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s;
+    transition: all 0.2s ease-in-out;
     span {
       z-index: 2;
     }
@@ -41,6 +41,7 @@
 .grid-nav__item:hover {
   /* Add hover effect for navigation items */
   transform: scale(1.02);
+  font-size: 1.7rem;
 }
 
 .grid-nav__item:nth-child(1) {
