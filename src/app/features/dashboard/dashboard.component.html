@@ -4,6 +4,9 @@
   <div class="grid-nav">
     @for (route of routesForNav; track route.name) {
       <a
+        matRipple
+        [matRippleCentered]="true"
+        [matRippleColor]="rippleColor"
         class="grid-nav__item"
         [routerLink]="'/layout/' + route.path"
         routerLinkActive="active-link"

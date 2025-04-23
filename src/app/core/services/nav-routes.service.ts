@@ -22,7 +22,7 @@ export class NavRoutesService {
       if (route.path && route.children) {
         route.children.forEach((childRoute) => {
           const routeData: RouteData = childRoute.data as RouteData;
-          if (routeData.showInNav) {
+          if (routeData.showInNav && routeData.title) {
             this._routesForNav.push({ ...routeData, path: childRoute.path });
           }
         });
