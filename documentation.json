@@ -83,12 +83,12 @@
     },
     {
       "name": "Fats",
-      "id": "interface-Fats-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-Fats-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "monounsaturated",
@@ -148,12 +148,12 @@
     },
     {
       "name": "FoodListShortResponse",
-      "id": "interface-FoodListShortResponse-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-FoodListShortResponse-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "data",
@@ -193,12 +193,12 @@
     },
     {
       "name": "FoodModel",
-      "id": "interface-FoodModel-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-FoodModel-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "calories",
@@ -287,13 +287,58 @@
       "extends": []
     },
     {
+      "name": "FoodPosition",
+      "id": "interface-FoodPosition-17cdaddb4880ec4ba0cbe7efea1b5244965ba57666fca0390ef85a13b85d3678d34c16f0dbba2b64eb96450145f558a31df3366ddfea0855f6b3c18e01653713",
+      "file": "src/app/core/models/meal.model.ts",
+      "deprecated": false,
+      "deprecationMessage": "",
+      "type": "interface",
+      "sourceCode": "export interface FoodPosition {\r\n  name: string;\r\n  quantity: number;\r\n  unit: string;\r\n}\r\n",
+      "properties": [
+        {
+          "name": "name",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 2
+        },
+        {
+          "name": "quantity",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "number",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 3
+        },
+        {
+          "name": "unit",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 4
+        }
+      ],
+      "indexSignatures": [],
+      "kind": 171,
+      "methods": [],
+      "extends": []
+    },
+    {
       "name": "FoodResponse",
-      "id": "interface-FoodResponse-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-FoodResponse-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "data",
@@ -333,12 +378,12 @@
     },
     {
       "name": "FoodShortModel",
-      "id": "interface-FoodShortModel-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-FoodShortModel-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "id",
@@ -368,12 +413,12 @@
     },
     {
       "name": "FoodShortModel",
-      "id": "interface-FoodShortModel-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b-1",
+      "id": "interface-FoodShortModel-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b-1",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "id",
@@ -516,12 +561,12 @@
     },
     {
       "name": "MacroNutrients",
-      "id": "interface-MacroNutrients-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-MacroNutrients-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "carbohydrates",
@@ -591,12 +636,12 @@
     },
     {
       "name": "Minerals",
-      "id": "interface-Minerals-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-Minerals-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "calcium",
@@ -746,12 +791,12 @@
     },
     {
       "name": "Protein",
-      "id": "interface-Protein-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-Protein-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "animal",
@@ -861,12 +906,12 @@
     },
     {
       "name": "Sugars",
-      "id": "interface-Sugars-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-Sugars-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "fructose",
@@ -916,12 +961,12 @@
     },
     {
       "name": "VitaminA",
-      "id": "interface-VitaminA-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-VitaminA-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "beta_carotene",
@@ -971,12 +1016,12 @@
     },
     {
       "name": "Vitamins",
-      "id": "interface-Vitamins-3b031cb542be8ea6a695d9f3f0b1018f9b6341777be4c2a6c289aed2a2c0cbfef1de8b15504ae73be471fd4a3ce9dbf73899b000cd50d585bcc8cfc0a4adea8b",
+      "id": "interface-Vitamins-2a33a1f79b9f29e4af28eea5490d65e1ca4f5f074675d7308e6920ff71070b7582834bea5997fdc2c5d8ef472802953a092d28dd025259c87566f6a30f100b1b",
       "file": "src/app/core/models/food.model.ts",
       "deprecated": false,
       "deprecationMessage": "",
       "type": "interface",
-      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n",
+      "sourceCode": "export interface FoodModel {\r\n  id: string;\r\n  name: string;\r\n  calories: number;\r\n  water: number;\r\n  macroNutrients: MacroNutrients;\r\n  vitamins: Vitamins;\r\n  minerals: Minerals;\r\n  glycemic_index: number;\r\n}\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\n\r\nexport interface Protein {\r\n  total: number;\r\n  animal: number;\r\n  plant: number;\r\n}\r\n\r\nexport interface Fats {\r\n  total: number;\r\n  saturated: number;\r\n  monounsaturated: number;\r\n  polyunsaturated: number;\r\n  trans: number;\r\n}\r\n\r\nexport interface Sugars {\r\n  total: number;\r\n  glucose: number;\r\n  fructose: number;\r\n  sucrose: number;\r\n}\r\n\r\nexport interface VitaminA {\r\n  total: number;\r\n  retinol: number;\r\n  beta_carotene: number;\r\n  IU_units: number;\r\n}\r\n\r\nexport interface MacroNutrients {\r\n  protein: Protein;\r\n  fats: Fats;\r\n  carbohydrates: number;\r\n  sugars: Sugars;\r\n  fiber: number;\r\n  cholesterol: number;\r\n}\r\n\r\nexport interface Vitamins {\r\n  vitamin_C: number;\r\n  vitamin_A: VitaminA;\r\n  vitamin_E: number;\r\n  vitamin_K: number;\r\n  B1_thiamine: number;\r\n  B2_riboflavin: number;\r\n  B3_niacin: number;\r\n  B5_pantothenic_acid: number;\r\n  B6_pyridoxine: number;\r\n  B7_biotin: number;\r\n  B9_folic_acid: number;\r\n  B12_cobalamin: number;\r\n  vitamin_D: number;\r\n}\r\n\r\nexport interface Minerals {\r\n  potassium: number;\r\n  calcium: number;\r\n  magnesium: number;\r\n  phosphorus: number;\r\n  sodium: number;\r\n  iron: number;\r\n  zinc: number;\r\n  copper: number;\r\n  manganese: number;\r\n  selenium: number;\r\n  iodine: number;\r\n  fluoride: number;\r\n  chromium: number;\r\n  molybdenum: number;\r\n}\r\n\r\nexport interface FoodResponse {\r\n  success: boolean;\r\n  data: FoodModel;\r\n  message: string;\r\n}\r\n\r\nexport interface FoodShortModel {\r\n  id: string;\r\n  name: string;\r\n}\r\nexport interface FoodListShortResponse {\r\n  success: boolean;\r\n  data: FoodShortModel[];\r\n  message: string;\r\n}\r\n\r\n\r\n",
       "properties": [
         {
           "name": "B1_thiamine",
@@ -2062,6 +2107,122 @@
       "templateData": "<div class=\"dashboard\">\n  <app-page-header title=\"Dashboard\" />\n  <app-gender-picker />\n  <div class=\"grid-nav\">\n    @for (route of routesForNav; track route.name) {\n      <a\n        matRipple\n        [matRippleCentered]=\"true\"\n        [matRippleColor]=\"rippleColor\"\n        class=\"grid-nav__item\"\n        [routerLink]=\"'/layout/' + route.path\"\n        routerLinkActive=\"active-link\"\n        [routerLinkActiveOptions]=\"{ exact: true }\"\n      >\n        <span>{{ route.name }}</span>\n      </a>\n    }\n  </div>\n</div>\n"
     },
     {
+      "name": "DeleteButtonsComponent",
+      "id": "component-DeleteButtonsComponent-ccf4c869f7f853192aab6d7cfb53f9761a9ae57bf25a2c25995a26aca91b291d356c43942f8abda223c524109aca6b4356f74d7bf2b04621eed5b6dfe0268dce",
+      "file": "src/app/shared/components/delete-buttons/delete-buttons.component.ts",
+      "changeDetection": "ChangeDetectionStrategy.OnPush",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-delete-buttons",
+      "styleUrls": [],
+      "styles": [],
+      "templateUrl": ["./delete-buttons.component.html"],
+      "viewProviders": [],
+      "hostDirectives": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "onDelete",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 16,
+          "deprecated": false,
+          "deprecationMessage": "",
+          "rawdescription": "\n\n\n",
+          "description": ""
+        }
+      ],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "standalone": false,
+      "imports": [
+        {
+          "name": "MatIconModule",
+          "type": "module"
+        }
+      ],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\n\r\n@Component({\r\n  selector: 'app-delete-buttons',\r\n  imports: [MatIconModule],\r\n  templateUrl: './delete-buttons.component.html',\r\n  styleUrl: './delete-buttons.component.scss',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class DeleteButtonsComponent {\r\n\r\n  /**\r\n   *\r\n   */\r\n  onDelete(): void {\r\n    console.log('Delete button clicked');\r\n  }\r\n}\r\n",
+      "styleUrl": "./delete-buttons.component.scss",
+      "assetsDirs": [],
+      "styleUrlsData": "",
+      "stylesData": "",
+      "extends": [],
+      "templateData": "\r\n<button mat-icon-button (click)=\"onDelete()\">\r\n  <mat-icon>delete</mat-icon>\r\n</button>\r\n"
+    },
+    {
+      "name": "FoodPositionComponent",
+      "id": "component-FoodPositionComponent-211de19ce5a657b46d79c84a0542916ab4e46a3df42c74a7885de28f8ae0077e9eb0efdd1ec41fa3e55cdb064281c4b874117c6a427e21a08752686ff24835cf",
+      "file": "src/app/shared/components/food-position/food-position.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-food-position",
+      "styleUrls": [],
+      "styles": [],
+      "templateUrl": ["./food-position.component.html"],
+      "viewProviders": [],
+      "hostDirectives": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "foodPosition",
+          "defaultValue": "input<FoodPosition>({} as FoodPosition)",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 14
+        }
+      ],
+      "methodsClass": [],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "standalone": false,
+      "imports": [
+        {
+          "name": "MatIconModule",
+          "type": "module"
+        },
+        {
+          "name": "MatInputModule",
+          "type": "module"
+        },
+        {
+          "name": "DeleteButtonsComponent",
+          "type": "component"
+        }
+      ],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { FoodPosition } from '@models/meal.model';\r\nimport { DeleteButtonsComponent } from \"../delete-buttons/delete-buttons.component\";\r\n\r\n@Component({\r\n  selector: 'app-food-position',\r\n  imports: [MatIconModule, MatInputModule, DeleteButtonsComponent],\r\n  templateUrl: './food-position.component.html',\r\n  styleUrl: './food-position.component.scss',\r\n})\r\nexport class FoodPositionComponent {\r\n  foodPosition = input<FoodPosition>({} as FoodPosition);\r\n}\r\n",
+      "styleUrl": "./food-position.component.scss",
+      "assetsDirs": [],
+      "styleUrlsData": "",
+      "stylesData": "",
+      "extends": [],
+      "templateData": "<form>\r\n  <label for=\"food-position\">{{ foodPosition().name }}</label>\r\n  <input\r\n    id=\"food-position\"\r\n    type=\"text\"\r\n    matInput\r\n    value=\"{{ foodPosition().quantity }}\"\r\n  />\r\n  <span>[{{ foodPosition().unit }}]</span>\r\n</form>\r\n<app-delete-buttons />\r\n"
+    },
+    {
       "name": "FoodSearchComponent",
       "id": "component-FoodSearchComponent-3a32d91f997eb3156561badd08f5925a1222d21e529f0a0aa5dcc9e1d731887265636bad9c32643a57ef70efa4dd308937c325b2358d9b03534b14f9f904afbf",
       "file": "src/app/features/food-search/food-search.component.ts",
@@ -2635,7 +2796,7 @@
     },
     {
       "name": "MealBoardComponent",
-      "id": "component-MealBoardComponent-a0259179ffeedb7cc5ccba6f762d63bba42b88320ff00b30a1036edb8f96edb1a97ddd37dd564ec88925a3b0f74609ce66b629e88ac905c15bf179654fcbea75",
+      "id": "component-MealBoardComponent-fca0b26a95036501cf5201b95c47de02f792f2199f6b1edcb59c2f164e9f93bcfc12be3800e24723125164bfe5c0a56491c37567214f3327e72cc21d6522968a",
       "file": "src/app/features/meal-board/meal-board.component.ts",
       "encapsulation": [],
       "entryComponents": [],
@@ -2657,21 +2818,26 @@
       "hostBindings": [],
       "hostListeners": [],
       "standalone": false,
-      "imports": [],
+      "imports": [
+        {
+          "name": "MealCardComponent",
+          "type": "component"
+        }
+      ],
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-meal-board',\r\n  imports: [],\r\n  templateUrl: './meal-board.component.html',\r\n  styleUrl: './meal-board.component.scss',\r\n})\r\nexport class MealBoardComponent {}\r\n",
+      "sourceCode": "import { Component } from '@angular/core';\r\nimport { MealCardComponent } from \"@shared/components/meal-card/meal-card.component\";\r\n\r\n@Component({\r\n  selector: 'app-meal-board',\r\n  imports: [MealCardComponent],\r\n  templateUrl: './meal-board.component.html',\r\n  styleUrl: './meal-board.component.scss',\r\n})\r\nexport class MealBoardComponent {}\r\n",
       "styleUrl": "./meal-board.component.scss",
       "assetsDirs": [],
       "styleUrlsData": "",
       "stylesData": "",
       "extends": [],
-      "templateData": "<p>meal-board works!</p>\r\n"
+      "templateData": "<p>meal-board works!</p>\r\n\r\n<app-meal-card />\r\n"
     },
     {
       "name": "MealCardComponent",
-      "id": "component-MealCardComponent-dc1c34e9079bcd0862e93df9620fb8483a51e17f9e4d6e39252094c927023a96dfeb3dbc24ca85e2299150af2c512bdc050364d783f51e3a4cb3e4893c1c6d3b",
+      "id": "component-MealCardComponent-cee22e36c46c5ee6e9044168d4fbebec0926b6b2005085be27fa0df94fc7313be5180cf218959aaed826ed37f2fa0e9a91b3d580c3ae5d44a15644bcad32aebf",
       "file": "src/app/shared/components/meal-card/meal-card.component.ts",
       "encapsulation": [],
       "entryComponents": [],
@@ -2684,9 +2850,78 @@
       "templateUrl": ["./meal-card.component.html"],
       "viewProviders": [],
       "hostDirectives": [],
-      "inputsClass": [],
+      "inputsClass": [
+        {
+          "name": "isExpanded",
+          "defaultValue": "true",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 35,
+          "required": false
+        }
+      ],
       "outputsClass": [],
       "propertiesClass": [
+        {
+          "name": "displayName",
+          "defaultValue": "false",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 32
+        },
+        {
+          "name": "isExpanded",
+          "defaultValue": "true",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 35,
+          "required": false
+        },
+        {
+          "name": "nutrientData",
+          "defaultValue": "input<FoodModel>({} as FoodModel)",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 36
+        },
+        {
+          "name": "searchButtonText",
+          "defaultValue": "\"Add\"",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 33
+        },
+        {
+          "name": "selectedFoods",
+          "defaultValue": "input<FoodPosition[]>([{\n    name: 'Carrot',\n    quantity: 100,\n    unit: 'grams',\n  }] as FoodPosition[])",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 37
+        },
         {
           "name": "title",
           "defaultValue": "input<string>('New Meal')",
@@ -2696,7 +2931,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 24
+          "line": 34
         }
       ],
       "methodsClass": [],
@@ -2732,18 +2967,30 @@
         {
           "name": "SearchBarComponent",
           "type": "component"
+        },
+        {
+          "name": "NutrientsDisplayComponent",
+          "type": "component"
+        },
+        {
+          "name": "DeleteButtonsComponent",
+          "type": "component"
+        },
+        {
+          "name": "FoodPositionComponent",
+          "type": "component"
         }
       ],
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Component, input } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatAccordion, MatExpansionModule } from '@angular/material/expansion';\nimport { SearchBarComponent } from '../search-bar/search-bar.component';\n\n@Component({\n  selector: 'app-meal-card',\n  imports: [\n    MatButtonModule,\n    MatExpansionModule,\n    MatIconModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAccordion,\n    SearchBarComponent,\n  ],\n  templateUrl: './meal-card.component.html',\n  styleUrl: './meal-card.component.scss',\n})\nexport class MealCardComponent {\n  title = input<string>('New Meal');\n}\n",
+      "sourceCode": "import { Component, input } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatAccordion, MatExpansionModule } from '@angular/material/expansion';\nimport { SearchBarComponent } from '../search-bar/search-bar.component';\nimport { NutrientsDisplayComponent } from '../nutriens-display/nutrients-display.component';\nimport { FoodModel } from '@models/food.model';\nimport { DeleteButtonsComponent } from '../delete-buttons/delete-buttons.component';\nimport { FoodPositionComponent } from \"../food-position/food-position.component\";\nimport { FoodPosition } from '@models/meal.model';\n\n@Component({\n  selector: 'app-meal-card',\n  imports: [\n    MatButtonModule,\n    MatExpansionModule,\n    MatIconModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAccordion,\n    SearchBarComponent,\n    NutrientsDisplayComponent,\n    DeleteButtonsComponent,\n    FoodPositionComponent\n],\n  templateUrl: './meal-card.component.html',\n  styleUrl: './meal-card.component.scss',\n})\nexport class MealCardComponent {\n  displayName = false;\n  searchButtonText = \"Add\"\n  title = input<string>('New Meal');\n  isExpanded = input<boolean>(true);\n  nutrientData = input<FoodModel>({} as FoodModel);\n  selectedFoods = input<FoodPosition[]>([{\n    name: 'Carrot',\n    quantity: 100,\n    unit: 'grams',\n  }] as FoodPosition[]);\n}\n",
       "styleUrl": "./meal-card.component.scss",
       "assetsDirs": [],
       "styleUrlsData": "",
       "stylesData": "",
       "extends": [],
-      "templateData": "<mat-accordion class=\"example-headers-align\" multi>\n  <mat-expansion-panel>\n    <mat-expansion-panel-header>\n      <mat-panel-title> {{title()}} </mat-panel-title>\n      <mat-panel-description>\n        Type your name and age\n        <mat-icon>account_circle</mat-icon>\n      </mat-panel-description>\n    </mat-expansion-panel-header>\n    <app-search-bar />\n  </mat-expansion-panel>\n</mat-accordion>\n"
+      "templateData": "<mat-accordion multi>\n  <mat-expansion-panel class=\"meal-expansion-panel\" [expanded]=\"isExpanded\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        {{ title() }}\n      </mat-panel-title>\n      <!-- <mat-panel-description>\n        Type your name and age\n        <mat-icon>account_circle</mat-icon>\n      </mat-panel-description> -->\n    </mat-expansion-panel-header>\n    <div class=\"meal-card-content\">\n      <!-- food search bar -->\n      <div class=\"meal-card-content__search-bar\">\n        <app-search-bar [buttonText]=\"searchButtonText\" />\n        <app-delete-buttons />\n      </div>\n      <!-- food position -->\n      <ul class=\"meal-card-content__food-position\">\n        @for(food of selectedFoods(); track food) {\n          <li>\n            <app-food-position />\n          </li>\n        }\n      </ul>\n\n      <!-- nutrients list -->\n    </div>\n    <app-nutrients-display\n      [nutrientData]=\"nutrientData()\"\n      [displayName]=\"displayName\"\n    />\n  </mat-expansion-panel>\n</mat-accordion>\n"
     },
     {
       "name": "MealStatisticsComponent",
@@ -2819,7 +3066,7 @@
     },
     {
       "name": "NutrientsDisplayComponent",
-      "id": "component-NutrientsDisplayComponent-9f26ab92ba51f74d99154386808054434c1460346132a83a6b77d9ab16d7301c41b47c9b68a1bbbf0f51bce161216f65e9aefac24f5baec876af75df1e4e97a1",
+      "id": "component-NutrientsDisplayComponent-1bdc4736f30a16bc7e8d0f3bc6a581cb765b9cda021409d9cdc255602ce1062381477960f3dcfff0a7ad929efd0956a27c934855449d0808c485a05e63647e0c",
       "file": "src/app/shared/components/nutriens-display/nutrients-display.component.ts",
       "encapsulation": [],
       "entryComponents": [],
@@ -2832,9 +3079,34 @@
       "templateUrl": ["./nutrients-display.component.html"],
       "viewProviders": [],
       "hostDirectives": [],
-      "inputsClass": [],
+      "inputsClass": [
+        {
+          "name": "displayName",
+          "defaultValue": "true",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 12,
+          "required": false
+        }
+      ],
       "outputsClass": [],
       "propertiesClass": [
+        {
+          "name": "displayName",
+          "defaultValue": "true",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 12,
+          "required": false
+        },
         {
           "name": "nutrientData",
           "defaultValue": "input<FoodModel>({} as FoodModel)",
@@ -2857,13 +3129,13 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { FoodModel } from '@models/food.model';\r\n\r\n@Component({\r\n  selector: 'app-nutrients-display',\r\n  imports: [],\r\n  templateUrl: './nutrients-display.component.html',\r\n  styleUrl: './nutrients-display.component.scss',\r\n})\r\nexport class NutrientsDisplayComponent {\r\n  nutrientData = input<FoodModel>({} as FoodModel);\r\n}\r\n",
+      "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { FoodModel } from '@models/food.model';\r\n\r\n@Component({\r\n  selector: 'app-nutrients-display',\r\n  imports: [],\r\n  templateUrl: './nutrients-display.component.html',\r\n  styleUrl: './nutrients-display.component.scss',\r\n})\r\nexport class NutrientsDisplayComponent {\r\n  nutrientData = input<FoodModel>({} as FoodModel);\r\n  displayName = input<boolean>(true);\r\n}\r\n",
       "styleUrl": "./nutrients-display.component.scss",
       "assetsDirs": [],
       "styleUrlsData": "",
       "stylesData": "",
       "extends": [],
-      "templateData": "<!-- nutrient-list.component.html -->\n<div class=\"nutrient-container\">\n  @if (nutrientData().name) {\n    <h2>Name: {{ nutrientData().name }}</h2>\n    <div class=\"columns-container\">\n      <!-- Other Nutrients Column -->\n      <div class=\"column other\">\n        <h3>Nutrients</h3>\n        <ul class=\"nutrient-list\">\n          <li><strong>Calories:</strong> {{ nutrientData().calories }} kcal</li>\n          <li><strong>Water Content:</strong> {{ nutrientData().water }} %</li>\n          <li>\n            <strong>Total Protein:</strong>\n            {{ nutrientData().macroNutrients.protein.total }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Animal Protein:</strong>\n            {{ nutrientData().macroNutrients.protein.animal }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Plant Protein:</strong>\n            {{ nutrientData().macroNutrients.protein.plant }} g\n          </li>\n          <li>\n            <strong>Total Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.total }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Saturated Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.saturated }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Monounsaturated Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.monounsaturated }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Polyunsaturated Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.polyunsaturated }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Trans Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.trans }} g\n          </li>\n          <li>\n            <strong>Total Carbohydrates:</strong>\n            {{ nutrientData().macroNutrients.carbohydrates }} g\n          </li>\n          <li>\n            <strong>Total Sugars:</strong>\n            {{ nutrientData().macroNutrients.sugars.total }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Glucose:</strong>\n            {{ nutrientData().macroNutrients.sugars.glucose }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Fructose:</strong>\n            {{ nutrientData().macroNutrients.sugars.fructose }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Sucrose:</strong>\n            {{ nutrientData().macroNutrients.sugars.sucrose }} g\n          </li>\n          <li>\n            <strong>Fiber:</strong> {{ nutrientData().macroNutrients.fiber }} g\n          </li>\n          <li>\n            <strong>Cholesterol:</strong>\n            {{ nutrientData().macroNutrients.cholesterol }} mg\n          </li>\n          <li>\n            <strong>Glycemic Index:</strong> {{ nutrientData().glycemic_index }}\n          </li>\n        </ul>\n      </div>\n      <!-- Minerals Column -->\n      <div class=\"column minerals\">\n        <h3>Minerals</h3>\n        <ul class=\"nutrient-list\">\n          <li>\n            <strong>Potassium: </strong>\n            {{ nutrientData().minerals.potassium }} mg\n          </li>\n          <li>\n            <strong>Calcium: </strong> {{ nutrientData().minerals.calcium }} mg\n          </li>\n          <li>\n            <strong>Magnesium: </strong>\n            {{ nutrientData().minerals.magnesium }} mg\n          </li>\n          <li>\n            <strong>Phosphorus: </strong>\n            {{ nutrientData().minerals.phosphorus }} mg\n          </li>\n          <li>\n            <strong>Sodium: </strong> {{ nutrientData().minerals.sodium }} mg\n          </li>\n          <li><strong>Iron :</strong> {{ nutrientData().minerals.iron }} mg</li>\n          <li><strong>Zinc: </strong> {{ nutrientData().minerals.zinc }} mg</li>\n          <li>\n            <strong>Copper: </strong> {{ nutrientData().minerals.copper }} mg\n          </li>\n          <li>\n            <strong>Manganese:</strong>\n            {{ nutrientData().minerals.manganese }} mg\n          </li>\n          <li>\n            <strong>Selenium:</strong> {{ nutrientData().minerals.selenium }} mg\n          </li>\n          <li>\n            <strong>Iodine:</strong> {{ nutrientData().minerals.iodine }} mg\n          </li>\n          <li>\n            <strong>Fluoride:</strong> {{ nutrientData().minerals.fluoride }} mg\n          </li>\n          <li>\n            <strong>Chromium:</strong> {{ nutrientData().minerals.chromium }} mg\n          </li>\n          <li>\n            <strong>Molybdenum:</strong>\n            {{ nutrientData().minerals.molybdenum }} mg\n          </li>\n        </ul>\n      </div>\n\n      <!-- Vitamins Column -->\n      <div class=\"column vitamins\">\n        <h3>Vitamins</h3>\n        <ul class=\"nutrient-list\">\n          <li>\n            <strong>Vitamin C:</strong>\n            {{ nutrientData().vitamins.vitamin_C }} mg\n          </li>\n          <li>\n            <strong>Vitamin A:</strong>\n            {{ nutrientData().vitamins.vitamin_A.total }} mg\n          </li>\n          <li>\n            <strong>Vitamin E:</strong>\n            {{ nutrientData().vitamins.vitamin_E }} mg\n          </li>\n          <li>\n            <strong>Vitamin K:</strong>\n            {{ nutrientData().vitamins.vitamin_K }} mg\n          </li>\n          <li>\n            <strong>B1 Thiamine:</strong>\n            {{ nutrientData().vitamins.B1_thiamine }} mg\n          </li>\n          <li>\n            <strong>B2 Riboflavin:</strong>\n            {{ nutrientData().vitamins.B2_riboflavin }} mg\n          </li>\n          <li>\n            <strong>B3 Niacin:</strong>\n            {{ nutrientData().vitamins.B3_niacin }} mg\n          </li>\n          <li>\n            <strong>B5 Pantothenic Acid: </strong>\n            {{ nutrientData().vitamins.B5_pantothenic_acid }} mg\n          </li>\n          <li>\n            <strong>B6 Pyridoxine:</strong>\n            {{ nutrientData().vitamins.B6_pyridoxine }} mg\n          </li>\n          <li>\n            <strong>B7 Biotin:</strong>\n            {{ nutrientData().vitamins.B7_biotin }} mg\n          </li>\n          <li>\n            <strong>B9 Folic Acid:</strong>\n            {{ nutrientData().vitamins.B9_folic_acid }} mg\n          </li>\n          <li>\n            <strong>B12 Cobalamin:</strong>\n            {{ nutrientData().vitamins.B12_cobalamin }} mg\n          </li>\n          <li>\n            <strong>Vitamin D:</strong>\n            {{ nutrientData().vitamins.vitamin_D }} mg\n          </li>\n        </ul>\n      </div>\n    </div>\n  }\n</div>\n"
+      "templateData": "<!-- nutrient-list.component.html -->\n<div class=\"nutrient-container\">\n  @if (nutrientData().name) {\n    @if(displayName()) {\n      <h2>Name: {{ nutrientData().name }}</h2>\n    }\n    <div class=\"columns-container\">\n      <!-- Other Nutrients Column -->\n      <div class=\"column other\">\n        <h3>Nutrients</h3>\n        <ul class=\"nutrient-list\">\n          <li><strong>Calories:</strong> {{ nutrientData().calories }} kcal</li>\n          <li><strong>Water Content:</strong> {{ nutrientData().water }} %</li>\n          <li>\n            <strong>Total Protein:</strong>\n            {{ nutrientData().macroNutrients.protein.total }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Animal Protein:</strong>\n            {{ nutrientData().macroNutrients.protein.animal }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Plant Protein:</strong>\n            {{ nutrientData().macroNutrients.protein.plant }} g\n          </li>\n          <li>\n            <strong>Total Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.total }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Saturated Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.saturated }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Monounsaturated Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.monounsaturated }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Polyunsaturated Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.polyunsaturated }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Trans Fats:</strong>\n            {{ nutrientData().macroNutrients.fats.trans }} g\n          </li>\n          <li>\n            <strong>Total Carbohydrates:</strong>\n            {{ nutrientData().macroNutrients.carbohydrates }} g\n          </li>\n          <li>\n            <strong>Total Sugars:</strong>\n            {{ nutrientData().macroNutrients.sugars.total }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Glucose:</strong>\n            {{ nutrientData().macroNutrients.sugars.glucose }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Fructose:</strong>\n            {{ nutrientData().macroNutrients.sugars.fructose }} g\n          </li>\n          <li>\n            <strong class=\"list-item-margin-left\">Sucrose:</strong>\n            {{ nutrientData().macroNutrients.sugars.sucrose }} g\n          </li>\n          <li>\n            <strong>Fiber:</strong> {{ nutrientData().macroNutrients.fiber }} g\n          </li>\n          <li>\n            <strong>Cholesterol:</strong>\n            {{ nutrientData().macroNutrients.cholesterol }} mg\n          </li>\n          <li>\n            <strong>Glycemic Index:</strong> {{ nutrientData().glycemic_index }}\n          </li>\n        </ul>\n      </div>\n      <!-- Minerals Column -->\n      <div class=\"column minerals\">\n        <h3>Minerals</h3>\n        <ul class=\"nutrient-list\">\n          <li>\n            <strong>Potassium: </strong>\n            {{ nutrientData().minerals.potassium }} mg\n          </li>\n          <li>\n            <strong>Calcium: </strong> {{ nutrientData().minerals.calcium }} mg\n          </li>\n          <li>\n            <strong>Magnesium: </strong>\n            {{ nutrientData().minerals.magnesium }} mg\n          </li>\n          <li>\n            <strong>Phosphorus: </strong>\n            {{ nutrientData().minerals.phosphorus }} mg\n          </li>\n          <li>\n            <strong>Sodium: </strong> {{ nutrientData().minerals.sodium }} mg\n          </li>\n          <li><strong>Iron :</strong> {{ nutrientData().minerals.iron }} mg</li>\n          <li><strong>Zinc: </strong> {{ nutrientData().minerals.zinc }} mg</li>\n          <li>\n            <strong>Copper: </strong> {{ nutrientData().minerals.copper }} mg\n          </li>\n          <li>\n            <strong>Manganese:</strong>\n            {{ nutrientData().minerals.manganese }} mg\n          </li>\n          <li>\n            <strong>Selenium:</strong> {{ nutrientData().minerals.selenium }} mg\n          </li>\n          <li>\n            <strong>Iodine:</strong> {{ nutrientData().minerals.iodine }} mg\n          </li>\n          <li>\n            <strong>Fluoride:</strong> {{ nutrientData().minerals.fluoride }} mg\n          </li>\n          <li>\n            <strong>Chromium:</strong> {{ nutrientData().minerals.chromium }} mg\n          </li>\n          <li>\n            <strong>Molybdenum:</strong>\n            {{ nutrientData().minerals.molybdenum }} mg\n          </li>\n        </ul>\n      </div>\n\n      <!-- Vitamins Column -->\n      <div class=\"column vitamins\">\n        <h3>Vitamins</h3>\n        <ul class=\"nutrient-list\">\n          <li>\n            <strong>Vitamin C:</strong>\n            {{ nutrientData().vitamins.vitamin_C }} mg\n          </li>\n          <li>\n            <strong>Vitamin A:</strong>\n            {{ nutrientData().vitamins.vitamin_A.total }} mg\n          </li>\n          <li>\n            <strong>Vitamin E:</strong>\n            {{ nutrientData().vitamins.vitamin_E }} mg\n          </li>\n          <li>\n            <strong>Vitamin K:</strong>\n            {{ nutrientData().vitamins.vitamin_K }} mg\n          </li>\n          <li>\n            <strong>B1 Thiamine:</strong>\n            {{ nutrientData().vitamins.B1_thiamine }} mg\n          </li>\n          <li>\n            <strong>B2 Riboflavin:</strong>\n            {{ nutrientData().vitamins.B2_riboflavin }} mg\n          </li>\n          <li>\n            <strong>B3 Niacin:</strong>\n            {{ nutrientData().vitamins.B3_niacin }} mg\n          </li>\n          <li>\n            <strong>B5 Pantothenic Acid: </strong>\n            {{ nutrientData().vitamins.B5_pantothenic_acid }} mg\n          </li>\n          <li>\n            <strong>B6 Pyridoxine:</strong>\n            {{ nutrientData().vitamins.B6_pyridoxine }} mg\n          </li>\n          <li>\n            <strong>B7 Biotin:</strong>\n            {{ nutrientData().vitamins.B7_biotin }} mg\n          </li>\n          <li>\n            <strong>B9 Folic Acid:</strong>\n            {{ nutrientData().vitamins.B9_folic_acid }} mg\n          </li>\n          <li>\n            <strong>B12 Cobalamin:</strong>\n            {{ nutrientData().vitamins.B12_cobalamin }} mg\n          </li>\n          <li>\n            <strong>Vitamin D:</strong>\n            {{ nutrientData().vitamins.vitamin_D }} mg\n          </li>\n        </ul>\n      </div>\n    </div>\n  }\n</div>\n"
     },
     {
       "name": "PageHeaderComponent",
@@ -2951,7 +3223,7 @@
     },
     {
       "name": "SearchBarComponent",
-      "id": "component-SearchBarComponent-788efce6e0b262b2e144f7165de2c898e4cc8cbf7103ba4ca33ebb48489d3557f8d8f6b1141b0df99b9b991c21914a1af27f85a788edfdf20425e414fbca0401",
+      "id": "component-SearchBarComponent-4d0160124d28ba8134c41731b5c185314ed4fad7056e54661fed4dbd6ceb088cba0f0f6db80fe68533f00d98e54c044c19a27d0207cb996a1293ccd8775047bc",
       "file": "src/app/shared/components/search-bar/search-bar.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -2975,7 +3247,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 36,
+          "line": 38,
           "modifierKind": [125],
           "required": false
         }
@@ -2990,7 +3262,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 38,
+          "line": 40,
           "modifierKind": [125]
         },
         {
@@ -3001,7 +3273,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 36,
+          "line": 38,
           "modifierKind": [125],
           "required": false
         },
@@ -3013,7 +3285,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 34,
+          "line": 36,
           "modifierKind": [125]
         },
         {
@@ -3025,7 +3297,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 33,
+          "line": 35,
           "modifierKind": [125]
         },
         {
@@ -3037,7 +3309,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 39,
+          "line": 41,
           "modifierKind": [125]
         },
         {
@@ -3049,7 +3321,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 40,
+          "line": 42,
           "modifierKind": [125]
         },
         {
@@ -3061,7 +3333,7 @@
           "indexKey": "",
           "optional": false,
           "description": "",
-          "line": 41,
+          "line": 43,
           "modifierKind": [125]
         }
       ],
@@ -3072,7 +3344,7 @@
           "optional": false,
           "returnType": "boolean",
           "typeParameters": [],
-          "line": 64,
+          "line": 66,
           "deprecated": false,
           "deprecationMessage": "",
           "rawdescription": "\n\n\n",
@@ -3081,8 +3353,8 @@
           "jsdoctags": [
             {
               "tagName": {
-                "pos": 1869,
-                "end": 1876,
+                "pos": 1944,
+                "end": 1951,
                 "kind": 80,
                 "id": 0,
                 "flags": 16842752,
@@ -3106,7 +3378,7 @@
           "optional": false,
           "returnType": "literal type[]",
           "typeParameters": [],
-          "line": 75,
+          "line": 77,
           "deprecated": false,
           "deprecationMessage": "",
           "rawdescription": "\n\nSearching the name\n",
@@ -3115,8 +3387,8 @@
           "jsdoctags": [
             {
               "name": {
-                "pos": 2070,
-                "end": 2075,
+                "pos": 2145,
+                "end": 2150,
                 "kind": 80,
                 "id": 0,
                 "flags": 16842752,
@@ -3127,8 +3399,8 @@
               "deprecated": false,
               "deprecationMessage": "",
               "tagName": {
-                "pos": 2064,
-                "end": 2069,
+                "pos": 2139,
+                "end": 2144,
                 "kind": 80,
                 "id": 0,
                 "flags": 16842752,
@@ -3139,8 +3411,8 @@
             },
             {
               "tagName": {
-                "pos": 2082,
-                "end": 2089,
+                "pos": 2157,
+                "end": 2164,
                 "kind": 80,
                 "id": 0,
                 "flags": 16842752,
@@ -3164,7 +3436,7 @@
           "optional": false,
           "returnType": "string | undefined",
           "typeParameters": [],
-          "line": 98,
+          "line": 100,
           "deprecated": false,
           "deprecationMessage": "",
           "rawdescription": "\n\nGet the id by name\n",
@@ -3188,7 +3460,7 @@
           "optional": false,
           "returnType": "void",
           "typeParameters": [],
-          "line": 84,
+          "line": 86,
           "deprecated": false,
           "deprecationMessage": "",
           "rawdescription": "\n\n\n",
@@ -3201,9 +3473,21 @@
           "optional": false,
           "returnType": "void",
           "typeParameters": [],
-          "line": 44,
+          "line": 46,
           "deprecated": false,
           "deprecationMessage": ""
+        },
+        {
+          "name": "onClear",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 107,
+          "deprecated": false,
+          "deprecationMessage": "",
+          "rawdescription": "\n\n\n",
+          "description": ""
         }
       ],
       "deprecated": false,
@@ -3237,6 +3521,10 @@
           "type": "module"
         },
         {
+          "name": "MatIconModule",
+          "type": "module"
+        },
+        {
           "name": "CommonModule",
           "type": "module"
         }
@@ -3244,7 +3532,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import {\n  Component,\n  input,\n  output,\n  ChangeDetectionStrategy,\n  AfterViewInit,\n} from '@angular/core';\nimport { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { map, Observable, startWith } from 'rxjs';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { CommonModule } from '@angular/common';\nimport { MatButtonModule } from '@angular/material/button';\n\n@Component({\n  standalone: true,\n  selector: 'app-search-bar',\n  imports: [\n    FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAutocompleteModule,\n    ReactiveFormsModule,\n    MatButtonModule,\n    CommonModule,\n  ],\n  templateUrl: './search-bar.component.html',\n  styleUrl: './search-bar.component.scss',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class SearchBarComponent implements AfterViewInit {\n  public foodControl = new FormControl<string>('');\n  public filteredOptions$!: Observable<{ id: string; name: string }[]>;\n  // outputs\n  public chosenOption = output<string>();\n  //inputs\n  public buttonText = input<string>('Search');\n  public inputLabelText = input<string>('Pick food');\n  public inputPlaceholderText = input<string>('Food');\n  public options = input<{ id: string; name: string }[]>([]);\n\n  // ngAfterViewInit is used because ngOnInit didn't trigger at start the dropdown list\n  ngAfterViewInit(): void {\n    this.filteredOptions$ = this.foodControl.valueChanges.pipe(\n      startWith(''),\n      map((value) => this.filter(value || '')),\n    );\n  }\n\n  get isFormValid(): boolean {\n    return (\n      this.foodControl.valid &&\n      this.foodControl.value !== '' &&\n      this.foodControl.value !== null &&\n      this.checkIfNameIsOnList()\n    );\n  }\n\n  /**\n   *\n   * @returns\n   */\n  private checkIfNameIsOnList(): boolean {\n    return this.options().some(\n      (option) => option.name === this.foodControl.value,\n    );\n  }\n\n  /**\n   * Searching the name\n   * @param value\n   * @returns\n   */\n  private filter(value: string): { id: string; name: string }[] {\n    return this.options().filter((option) =>\n      option.name.toLowerCase().startsWith(value.toLowerCase()),\n    );\n  }\n\n  /**\n   *\n   */\n  public getOption(): void {\n    const name = this.foodControl.value;\n    if (name) {\n      const id = this.getIdByName(name);\n      if (id) {\n        this.chosenOption.emit(id);\n        this.foodControl.reset();\n      }\n    }\n  }\n\n  /**\n   * Get the id by name\n   */\n  private getIdByName(name: string): string | undefined {\n    return this.options().find((option) => option.name === name)?.id;\n  }\n}\n",
+      "sourceCode": "import {\n  Component,\n  input,\n  output,\n  ChangeDetectionStrategy,\n  AfterViewInit,\n} from '@angular/core';\nimport { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { map, Observable, startWith } from 'rxjs';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { CommonModule } from '@angular/common';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\n\n@Component({\n  standalone: true,\n  selector: 'app-search-bar',\n  imports: [\n    FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatAutocompleteModule,\n    ReactiveFormsModule,\n    MatButtonModule,\n    MatIconModule,\n    CommonModule,\n  ],\n  templateUrl: './search-bar.component.html',\n  styleUrl: './search-bar.component.scss',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class SearchBarComponent implements AfterViewInit {\n  public foodControl = new FormControl<string>('');\n  public filteredOptions$!: Observable<{ id: string; name: string }[]>;\n  // outputs\n  public chosenOption = output<string>();\n  //inputs\n  public buttonText = input<string>('Search');\n  public inputLabelText = input<string>('Pick food');\n  public inputPlaceholderText = input<string>('Food');\n  public options = input<{ id: string; name: string }[]>([]);\n\n  // ngAfterViewInit is used because ngOnInit didn't trigger at start the dropdown list\n  ngAfterViewInit(): void {\n    this.filteredOptions$ = this.foodControl.valueChanges.pipe(\n      startWith(''),\n      map((value) => this.filter(value || '')),\n    );\n  }\n\n  get isFormValid(): boolean {\n    return (\n      this.foodControl.valid &&\n      this.foodControl.value !== '' &&\n      this.foodControl.value !== null &&\n      this.checkIfNameIsOnList()\n    );\n  }\n\n  /**\n   *\n   * @returns\n   */\n  private checkIfNameIsOnList(): boolean {\n    return this.options().some(\n      (option) => option.name === this.foodControl.value,\n    );\n  }\n\n  /**\n   * Searching the name\n   * @param value\n   * @returns\n   */\n  private filter(value: string): { id: string; name: string }[] {\n    return this.options().filter((option) =>\n      option.name.toLowerCase().startsWith(value.toLowerCase()),\n    );\n  }\n\n  /**\n   *\n   */\n  public getOption(): void {\n    const name = this.foodControl.value;\n    if (name) {\n      const id = this.getIdByName(name);\n      if (id) {\n        this.chosenOption.emit(id);\n        this.foodControl.reset();\n      }\n    }\n  }\n\n  /**\n   * Get the id by name\n   */\n  private getIdByName(name: string): string | undefined {\n    return this.options().find((option) => option.name === name)?.id;\n  }\n\n  /**\n   *\n   */\n  onClear(): void {\n    this.foodControl.reset();\n  }\n}\n",
       "styleUrl": "./search-bar.component.scss",
       "assetsDirs": [],
       "styleUrlsData": "",
@@ -3258,11 +3546,11 @@
             "name": "isFormValid",
             "type": "boolean",
             "returnType": "boolean",
-            "line": 51
+            "line": 53
           }
         }
       },
-      "templateData": "<form class=\"search-form\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <mat-label>{{ inputLabelText() }}</mat-label>\r\n    <input\r\n      type=\"text\"\r\n      [placeholder]=\"inputPlaceholderText()\"\r\n      [attr.aria-label]=\"inputLabelText()\"\r\n      matInput\r\n      [formControl]=\"foodControl\"\r\n      [matAutocomplete]=\"auto\"\r\n    />\r\n    <mat-autocomplete autoActiveFirstOption #auto=\"matAutocomplete\">\r\n      @let options = filteredOptions$ | async;\r\n      @for (option of options; track option) {\r\n        <mat-option [value]=\"option.name\">{{ option.name }}</mat-option>\r\n      }\r\n    </mat-autocomplete>\r\n  </mat-form-field>\r\n  <button\r\n    (click)=\"getOption()\"\r\n    mat-flat-button\r\n    class=\"search-button\"\r\n    [disabled]=\"!isFormValid\"\r\n  >\r\n    {{ buttonText() }}\r\n  </button>\r\n</form>\r\n"
+      "templateData": "<form class=\"search-form\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <mat-label>{{ inputLabelText() }}</mat-label>\r\n    <input\r\n      type=\"text\"\r\n      [placeholder]=\"inputPlaceholderText()\"\r\n      [attr.aria-label]=\"inputLabelText()\"\r\n      matInput\r\n      [formControl]=\"foodControl\"\r\n      [matAutocomplete]=\"auto\"\r\n    />\r\n    @if (foodControl.value) {\r\n      <button matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"onClear()\">\r\n        <mat-icon>close</mat-icon>\r\n      </button>\r\n    }\r\n    <mat-autocomplete autoActiveFirstOption #auto=\"matAutocomplete\">\r\n      @let options = filteredOptions$ | async;\r\n      @for (option of options; track option) {\r\n        <mat-option [value]=\"option.name\">{{ option.name }}</mat-option>\r\n      }\r\n    </mat-autocomplete>\r\n  </mat-form-field>\r\n  <button\r\n    (click)=\"getOption()\"\r\n    mat-flat-button\r\n    class=\"search-button\"\r\n    [disabled]=\"!isFormValid\"\r\n  >\r\n    {{ buttonText() }}\r\n  </button>\r\n</form>\r\n"
     },
     {
       "name": "SecureLayoutComponent",
@@ -4444,6 +4732,15 @@
         "status": "low"
       },
       {
+        "filePath": "src/app/core/models/meal.model.ts",
+        "type": "interface",
+        "linktype": "interface",
+        "name": "FoodPosition",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
         "filePath": "src/app/core/models/route.model.ts",
         "type": "interface",
         "linktype": "interface",
@@ -4627,6 +4924,24 @@
         "status": "low"
       },
       {
+        "filePath": "src/app/shared/components/delete-buttons/delete-buttons.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "DeleteButtonsComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/shared/components/food-position/food-position.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "FoodPositionComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
+        "status": "low"
+      },
+      {
         "filePath": "src/app/shared/components/header/header.component.ts",
         "type": "component",
         "linktype": "component",
@@ -4641,7 +4956,7 @@
         "linktype": "component",
         "name": "MealCardComponent",
         "coveragePercent": 0,
-        "coverageCount": "0/2",
+        "coverageCount": "0/8",
         "status": "low"
       },
       {
@@ -4650,7 +4965,7 @@
         "linktype": "component",
         "name": "NutrientsDisplayComponent",
         "coveragePercent": 0,
-        "coverageCount": "0/2",
+        "coverageCount": "0/4",
         "status": "low"
       },
       {
@@ -4667,8 +4982,8 @@
         "type": "component",
         "linktype": "component",
         "name": "SearchBarComponent",
-        "coveragePercent": 14,
-        "coverageCount": "2/14",
+        "coveragePercent": 13,
+        "coverageCount": "2/15",
         "status": "low"
       },
       {

@@ -12,6 +12,7 @@ import { map, Observable, startWith } from 'rxjs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
@@ -23,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatIconModule,
     CommonModule,
   ],
   templateUrl: './search-bar.component.html',
@@ -36,6 +38,7 @@ export class SearchBarComponent implements AfterViewInit {
   public chosenOption = output<string>();
   //inputs
   public buttonText = input<string>('Search');
+  public buttonFunction = input<'search' | 'add'>('search');
   public inputLabelText = input<string>('Pick food');
   public inputPlaceholderText = input<string>('Food');
   public options = input<{ id: string; name: string }[]>([]);
@@ -97,5 +100,12 @@ export class SearchBarComponent implements AfterViewInit {
    */
   private getIdByName(name: string): string | undefined {
     return this.options().find((option) => option.name === name)?.id;
+  }
+
+  /**
+   *
+   */
+  onClear(): void {
+    this.foodControl.reset();
   }
 }

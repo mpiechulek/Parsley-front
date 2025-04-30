@@ -17,6 +17,24 @@ export const Closed = {
   args: {
     variant: 'closed',
     title: '1 Breakfast',
+    displayName: false,
+    selectedFoods: [
+      {
+        name: 'Carrot',
+        quantity: 100,
+        unit: 'grams',
+      },
+      {
+        name: 'Apple',
+        quantity: 200,
+        unit: 'grams',
+      },
+      {
+        name: 'Milk',
+        quantity: 250,
+        unit: 'ml',
+      },
+    ],
     nutrientData: {
       macroNutrients: {
         protein: {

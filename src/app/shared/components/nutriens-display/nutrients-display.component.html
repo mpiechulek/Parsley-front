@@ -1,7 +1,9 @@
 <!-- nutrient-list.component.html -->
 <div class="nutrient-container">
   @if (nutrientData().name) {
-    <h2>Name: {{ nutrientData().name }}</h2>
+    @if (displayName()) {
+      <h2>Name: {{ nutrientData().name }}</h2>
+    }
     <div class="columns-container">
       <!-- Other Nutrients Column -->
       <div class="column other">
