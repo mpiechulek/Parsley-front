@@ -5,7 +5,7 @@
         {{ title() }}
       </mat-panel-title>
       <mat-panel-description>
-        <div>{{ currentDate | date: 'EEEE, MMMM d, yyyy' }},</div>
+        <div>{{ currentDate | date: 'EEEE, MMMM d, yyyy' }} -</div>
         <!-- Time in HH:mm format -->
         <div>{{ currentDate | date: 'HH:mm' }}</div>
       </mat-panel-description>
@@ -25,10 +25,12 @@
       </ul>
 
       <div class="meal-card-content__buttons">
-        <button mat-flat-button aria-label="Save meal">
-          Save <mat-icon class="app-mat-icon-scale-1">save</mat-icon>
-        </button>
-        <app-delete-buttons buttonStyle="text-icon" />
+        <div class="meal-card-content-buttons-wrapper">
+          <button mat-flat-button aria-label="Save meal">
+            Save <mat-icon class="app-mat-icon-scale-1">save</mat-icon>
+          </button>
+          <app-delete-buttons buttonStyle="text-icon" />
+        </div>
       </div>
 
       <!-- nutrients list -->

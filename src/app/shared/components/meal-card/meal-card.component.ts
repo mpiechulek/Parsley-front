@@ -11,6 +11,7 @@ import { DeleteButtonsComponent } from '../delete-buttons/delete-buttons.compone
 import { FoodPositionComponent } from '../food-position/food-position.component';
 import { FoodPosition } from '@models/meal.model';
 import { DatePipe } from '@angular/common';
+import { EmptyNutrients } from 'app/data/constants/empty-nutrients';
 
 @Component({
   selector: 'app-meal-card',
@@ -35,7 +36,7 @@ export class MealCardComponent {
   currentDate = new Date();
   title = input<string>('New Meal');
   isExpanded = input<boolean>(true);
-  nutrientData = input<FoodModel>({} as FoodModel);
+  nutrientData = input<FoodModel>(EmptyNutrients as FoodModel);
   selectedFoods = input<FoodPosition[]>([
     {
       name: 'Carrot',

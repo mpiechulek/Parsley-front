@@ -27,10 +27,14 @@
   }
 
   &__buttons {
-    position: relative;
     display: flex;
-    justify-content: space-between;
-    width: 20rem;
-    right: 0;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 2rem;
+    .meal-card-content-buttons-wrapper {
+      width: 20rem;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
