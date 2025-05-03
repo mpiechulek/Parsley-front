@@ -1,0 +1,40 @@
+.meal-expansion-panel {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.meal-card-content {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__food-position {
+    margin-left: 1.6rem;
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 2rem;
+    .meal-card-content-buttons-wrapper {
+      width: 20rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

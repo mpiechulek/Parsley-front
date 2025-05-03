@@ -2,10 +2,15 @@
   height: calc(100% - 64px);
 }
 
-.example-sidenav-content {
-  height: 100%;
+.content {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.example-sidenav {
+.sidenav {
   padding: 20px;
 }

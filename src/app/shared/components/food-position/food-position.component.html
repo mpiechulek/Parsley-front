@@ -1,0 +1,12 @@
+<form>
+  <mat-icon>panorama_fish_eye</mat-icon>
+  <label for="food-position">{{ foodPosition().name }}</label>
+  <input
+    id="food-position"
+    type="text"
+    matInput
+    value="{{ foodPosition().quantity }}"
+  />
+  <p>[{{ foodPosition().unit }}]</p>
+</form>
+<app-delete-buttons />

@@ -1,24 +1,85 @@
 .dashboard {
-  width: 100%;
-  height: 100px;
+  /* Create a responsive grid container */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
-.nutrition-item {
-  margin-left: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 20px;
-  &__label {
-    font-size: 16px;
-    width: 120px;
-  }
-  &__value {
-    font-size: 16px
+.grid-nav {
+  /* Make navigation section a grid */
+  display: grid;
+  grid-template-columns: repeat(3, 20rem);
+  grid-template-rows: repeat(5, 10rem);
+  gap: 10px;
+  border-radius: 8px;
 
+  &__item {
+    /* Style individual navigation items */
+    padding: 12px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    span {
+      z-index: 2;
+    }
   }
+}
+
+.grid-nav__item:focus {
+  span {
+    color: white !important;
+  }
+}
+
+.grid-nav__item:hover {
+  /* Add hover effect for navigation items */
+  transform: scale(1.02);
+  font-size: 1.7rem;
+}
+
+.grid-nav__item:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.grid-nav__item:nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.grid-nav__item:nth-child(3) {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.grid-nav__item:nth-child(4) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.grid-nav__item:hover {
+  transform: translateY(-2px);
+}
+
+/* Demo styling for app-gender-picker */
+.app-gender-picker {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
 }

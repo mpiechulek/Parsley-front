@@ -1,0 +1,43 @@
+<mat-accordion multi>
+  <mat-expansion-panel class="meal-expansion-panel" [expanded]="isExpanded">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ title() }}
+      </mat-panel-title>
+      <mat-panel-description>
+        <div>{{ currentDate | date: 'EEEE, MMMM d, yyyy' }} -</div>
+        <!-- Time in HH:mm format -->
+        <div>{{ currentDate | date: 'HH:mm' }}</div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="meal-card-content">
+      <!-- food search bar -->
+      <div class="meal-card-content__search-bar">
+        <app-search-bar buttonText="Add" buttonFunction="add" />
+      </div>
+      <!-- food position -->
+      <ul class="meal-card-content__food-position">
+        @for (food of selectedFoods(); track food.name) {
+          <li>
+            <app-food-position [foodPosition]="food" />
+          </li>
+        }
+      </ul>
+
+      <div class="meal-card-content__buttons">
+        <div class="meal-card-content-buttons-wrapper">
+          <button mat-flat-button aria-label="Save meal">
+            Save <mat-icon class="app-mat-icon-scale-1">save</mat-icon>
+          </button>
+          <app-delete-buttons buttonStyle="text-icon" />
+        </div>
+      </div>
+
+      <!-- nutrients list -->
+    </div>
+    <app-nutrients-display
+      [nutrientData]="nutrientData()"
+      [displayName]="displayName"
+    />
+  </mat-expansion-panel>
+</mat-accordion>

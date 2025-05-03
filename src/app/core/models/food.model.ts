@@ -98,4 +98,3 @@ export interface FoodListShortResponse {
   data: FoodShortModel[];
   message: string;
 }
-

@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Select gender</mat-label>
+  <mat-select>
+    @for (gender of genders; track gender) {
+      <mat-option [value]="gender.value">{{ gender.viewValue }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>

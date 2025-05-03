@@ -1,17 +1,28 @@
 // nutrient-list.component.scss
 .nutrient-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem;
+
+  h2 {
+    font-weight: 500;
+  }
 
   .columns-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 
+    strong {
+      font-weight: 500;
+    }
+
     .column {
       border-radius: 8px;
       padding: 1.5rem;
+      width: 34rem;
+
+      li {
+        padding: 4px;
+      }
 
       // Remove left padding from first column
       &:first-child {
@@ -38,6 +49,21 @@
   margin: 0;
   font-size: 1.4rem;
 
+  .nutrient-list-item {
+    &__value {
+      display: flex;
+      .unit-wrapper {
+        width: 30px;
+        margin-left: 8px;
+        margin-right: 3px;
+      }
+      .percentage-wrapper {
+        width: 50px;
+        flex: 1;
+      }
+    }
+  }
+
   .list-item-margin-left {
     margin-left: 1.5rem;
   }
@@ -47,6 +73,10 @@
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+
+    &:hover {
+      background-color: #ddd;
+    }
 
     &:last-child {
       border-bottom: none;

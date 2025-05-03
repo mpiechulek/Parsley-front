@@ -9,6 +9,11 @@
       [formControl]="foodControl"
       [matAutocomplete]="auto"
     />
+    @if (foodControl.value) {
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    }
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       @let options = filteredOptions$ | async;
       @for (option of options; track option) {
@@ -19,9 +24,15 @@
   <button
     (click)="getOption()"
     mat-flat-button
+    aria-label="Food button"
     class="search-button"
     [disabled]="!isFormValid"
   >
     {{ buttonText() }}
+    @if (buttonFunction() === 'add') {
+      <mat-icon class="app-mat-icon-scale-1">add_circle_outline</mat-icon>
+    } @else if (buttonFunction() === 'search') {
+      <mat-icon class="app-mat-icon-scale-1">search</mat-icon>
+    }
   </button>
 </form>
