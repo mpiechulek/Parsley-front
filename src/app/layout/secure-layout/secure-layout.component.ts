@@ -4,6 +4,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { SideNavComponent } from '@shared/components/side-nav/side-nav.component';
+
 @Component({
   selector: 'app-secure-layout',
   imports: [
