@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { RouteData, RouteDataForDisplay } from '@models/route.model';
-import { routes } from 'app/app.routes';
+import { Component, inject, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { RouteDataForDisplay } from '@models/route.model';
+import { NavRoutesService } from '@services/nav-routes.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -11,22 +11,10 @@ import { routes } from 'app/app.routes';
   styleUrl: './side-nav.component.scss',
 })
 export class SideNavComponent implements OnInit {
+  navRoutesService = inject(NavRoutesService);
   routesForNav: RouteDataForDisplay[] = [];
 
   ngOnInit(): void {
-    this.getRoutesForNav(routes);
-  }
-
-  private getRoutesForNav(routes: Routes) {
-    routes.forEach((route) => {
-      if (route.path && route.children) {
-        route.children.forEach((childRoute) => {
-          const routeData: RouteData = childRoute.data as RouteData;
-          if (routeData.showInNav) {
-            this.routesForNav.push({ ...routeData, path: childRoute.path });
-          }
-        });
-      }
-    });
+    this.routesForNav = this.navRoutesService.routesForNav;
   }
 }

@@ -1,0 +1,9 @@
+@use '../styles/abstracts/variables' as *;
+
+mat-panel-title {
+  font-size: $font-size-body-xl;
+}
+
+mat-panel-description {
+  font-size: $font-size-body-md;
+}

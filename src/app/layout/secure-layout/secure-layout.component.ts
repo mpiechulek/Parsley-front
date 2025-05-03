@@ -19,6 +19,7 @@ import { SideNavComponent } from '@shared/components/side-nav/side-nav.component
 })
 export class SecureLayoutComponent {
   showFiller = false;
+
   @ViewChild('drawer') drawer: MatSidenav | undefined;
 
   /**

@@ -3,4 +3,4 @@
 
 npx pretty-quick --staged
 npx lint-staged
-ng test --watch=false --browsers=ChromeHeadless
+ng test --watch=false --browsers=ChromeHeadless --code-coverage

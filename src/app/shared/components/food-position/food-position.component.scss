@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 300px;
+
+  form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    input {
+      width: 100px;
+      text-align: center;
+    }
+    mat-icon {
+      scale: 0.6;
+    }
+    label {
+      font-size: 1.8rem;
+      font-weight: 500;
+      width: 20rem;
+      overflow-wrap: break-word;
+    }
+    :not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  app-delete-buttons {
+    margin-left: 8rem;
+  }
+
+  h3,
+  span {
+    margin: 0;
+  }
+  p {
+    font-size: 1.5rem;
+    width: 30px;
+    margin-bottom: 0;
+  }
+}
