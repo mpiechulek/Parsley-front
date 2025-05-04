@@ -1,7 +1,7 @@
 <div class="food-search">
   <app-page-header title="Food Search" />
   <app-search-bar
-    [options]="foodSearchList()"
+    [options]="foodStore.foodShortList()"
     (chosenOption)="getFood($event)"
   />
   <app-nutrients-display [nutrientData]="foodData()" />

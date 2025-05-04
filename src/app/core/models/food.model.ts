@@ -13,6 +13,11 @@ export interface FoodShortModel {
   name: string;
 }
 
+export interface FoodMealPosition {
+  food: FoodModel;
+  quantity: number;
+  unit: string;
+}
 export interface Protein {
   total: number;
   animal: number;

@@ -1,7 +1,23 @@
+@use '../styles/abstracts/variables' as *;
+@use 'sass:map';
+
 :host {
   width: 1200px;
+  height: 100%;
+
+  .meal-board {
+    &__add-meal {
+      display: flex;
+      align-items: center;
+
+      .date-wrapper {
+        margin-left: 2rem;
+        font-size: map.get($typography-scales, 'body-xl');
+      }
+    }
+  }
 
   .meal-card-wrapper {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 }
