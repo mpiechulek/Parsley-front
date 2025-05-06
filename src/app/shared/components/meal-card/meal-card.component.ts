@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,6 +15,8 @@ import { DeleteButtonsComponent } from '../delete-buttons/delete-buttons.compone
 import { FoodPositionComponent } from '../food-position/food-position.component';
 import { DatePipe } from '@angular/common';
 import { EmptyNutrients } from 'app/data/constants/empty-nutrients';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-meal-card',
@@ -35,6 +37,8 @@ import { EmptyNutrients } from 'app/data/constants/empty-nutrients';
   styleUrl: './meal-card.component.scss',
 })
 export class MealCardComponent {
+  readonly dialog = inject(MatDialog);
+
   displayName = false;
   currentDate = new Date();
 
@@ -60,5 +64,23 @@ export class MealCardComponent {
    */
   onPickFood(foodId: string): void {
     this.pickedFoodEvent.emit({ foodId, mealId: this.mealId() });
+  }
+
+  /**
+   *
+   */
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+        confirmButtonName: 'Yes',
+        cancelButtonName: 'No',
+        message: 'Are you sure you want to delete this meal?',
+      },
+      width: '350px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) this.onDeleteMeal();
+    });
   }
 }
