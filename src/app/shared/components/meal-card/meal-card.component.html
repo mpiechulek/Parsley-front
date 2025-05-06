@@ -29,6 +29,8 @@
                 quantity: food.quantity,
                 unit: food.unit,
               }"
+              (changeFoodQuantity)="onChangeFoodQuantity($event)"
+              (deleteFood)="onDeleteFoodPosition($event)"
             />
           </li>
         }

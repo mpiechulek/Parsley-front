@@ -9,4 +9,4 @@
   />
   <p>[{{ foodPosition().unit }}]</p>
 </form>
-<app-delete-buttons />
+<app-delete-buttons (deleteEvent)="onDeleteFoodPosition()" />

@@ -39,10 +39,6 @@ export class MealBoardComponent {
   //TODO: If we have the id we delete the card first on BE side by id and then if
   //TODO: successful on FE side
 
-  //TODO: Check if food already in meal and if so, do not add it again
-
-  //TODO: Add modal dialog question to confirm delete meal
-
   /**
    *
    */
@@ -69,14 +65,30 @@ export class MealBoardComponent {
    *
    */
   onAddFoodToMeal(searchData: { foodId: string; mealId: string }): void {
+    // Check if food is already in meal
+    if (this.checkIfFoodAlreadyInMeal(searchData.foodId)) return;
+
+    //Fetch food data
     this.apiService
       .getFood(searchData.foodId)
       .subscribe((food: FoodResponse) => {
         this.pickedFood = food.data;
         if (food.data) {
+          // Add food to meal
           this.addFoodToMeal(searchData.mealId, food.data);
         }
       });
+  }
+
+  /**
+   *
+   * @param foodId
+   * @returns boolean
+   */
+  checkIfFoodAlreadyInMeal(foodId: string): boolean {
+    return this.mealBoardMeals.meals.some((meal) =>
+      meal.ingredients.some((ingredient) => ingredient.food.id === foodId),
+    );
   }
 
   /**
@@ -87,6 +99,38 @@ export class MealBoardComponent {
       if (meal.id === mealId)
         meal.ingredients.push({ food: foodData, quantity: 100, unit: 'g' });
       return meal.id === mealId;
+    });
+  }
+
+  /**
+   *
+   * @param foodId
+   * @param mealId
+   */
+
+  onDeleteFoodFromMeal(data: { name: string; mealId: string }): void {
+    this.mealBoardMeals.meals.forEach((meal) => {
+      if (meal.id === data.mealId)
+        meal.ingredients = meal.ingredients.filter((ingredient) => {
+          return ingredient.food.name !== data.name;
+        });
+    });
+  }
+
+  /**
+   *
+   */
+  editFoodQuantity(data: {
+    name: string;
+    mealId: string;
+    quantity: number;
+  }): void {
+    this.mealBoardMeals.meals.find((meal) => {
+      if (meal.id === data.mealId)
+        meal.ingredients.find((ingredient) => {
+          if (ingredient.food.name === data.name)
+            ingredient.quantity = data.quantity;
+        });
     });
   }
 }

@@ -25,6 +25,8 @@
       [foodSearchList]="foodStore.foodShortList()"
       (deleteMealEvent)="onDeleteMeal($event)"
       (pickedFoodEvent)="onAddFoodToMeal($event)"
+      (deleteFoodFromMeal)="onDeleteFoodFromMeal($event)"
+      (updateMealFoodQuantity)="editFoodQuantity($event)"
     />
   </div>
 }

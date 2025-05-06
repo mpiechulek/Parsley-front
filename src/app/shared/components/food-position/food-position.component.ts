@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FoodPosition } from '@models/meal.model';
@@ -12,4 +12,23 @@ import { DeleteButtonsComponent } from '../delete-buttons/delete-buttons.compone
 })
 export class FoodPositionComponent {
   foodPosition = input<FoodPosition>({} as FoodPosition);
+  changeFoodQuantity = output<{ name: string; quantity: number }>();
+  deleteFood = output<string>();
+
+  /**
+   *
+   */
+  onChangeFoodQuantity(): void {
+    this.changeFoodQuantity.emit({
+      name: this.foodPosition.name,
+      quantity: 10,
+    });
+  }
+
+  /**
+   *
+   */
+  onDeleteFoodPosition(): void {
+    this.deleteFood.emit(this.foodPosition().name);
+  }
 }

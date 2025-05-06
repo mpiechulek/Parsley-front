@@ -50,6 +50,12 @@ export class MealCardComponent {
   foodSearchList = input<FoodShortModel[]>([] as FoodShortModel[]);
 
   deleteMealEvent = output<string>();
+  deleteFoodFromMeal = output<{ name: string; mealId: string }>();
+  updateMealFoodQuantity = output<{
+    name: string;
+    mealId: string;
+    quantity: number;
+  }>();
   pickedFoodEvent = output<{ foodId: string; mealId: string }>({});
 
   /**
@@ -82,5 +88,25 @@ export class MealCardComponent {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) this.onDeleteMeal();
     });
+  }
+
+  /**
+   *
+   * @param param0
+   */
+  onChangeFoodQuantity(foodData: { name: string; quantity: number }) {
+    this.updateMealFoodQuantity.emit({
+      name: foodData.name,
+      mealId: this.mealId(),
+      quantity: foodData.quantity,
+    });
+  }
+
+  /**
+   *
+   * @param name
+   */
+  onDeleteFoodPosition(name: string): void {
+    this.deleteFoodFromMeal.emit({ name, mealId: this.mealId() });
   }
 }
