@@ -3,28 +3,24 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
-  width: 300px;
+  max-width: 50rem;
+  width: 100%;
 
-  form {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    input {
-      width: 100px;
-      text-align: center;
-    }
-    mat-icon {
-      scale: 0.6;
-    }
-    label {
-      font-size: 1.8rem;
-      font-weight: 500;
-      width: 20rem;
-      overflow-wrap: break-word;
-    }
-    :not(:last-child) {
-      margin-right: 1rem;
-    }
+  input {
+    width: 100px;
+    text-align: center;
+  }
+  mat-icon {
+    scale: 0.6;
+  }
+  label {
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 20rem;
+    overflow-wrap: break-word;
+  }
+  :not(:last-child) {
+    margin-right: 1rem;
   }
 
   app-delete-buttons {

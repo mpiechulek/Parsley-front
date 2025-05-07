@@ -18,11 +18,4 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class DeleteButtonsComponent {
   buttonStyle = input<'icon' | 'text-icon'>('icon');
   deleteEvent = output();
-
-  /**
-   *
-   */
-  onDelete(): void {
-    this.deleteEvent.emit();
-  }
 }

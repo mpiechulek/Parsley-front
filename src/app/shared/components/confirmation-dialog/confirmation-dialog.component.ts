@@ -6,7 +6,6 @@ import {
   MatDialogClose,
   MatDialogContent,
   MatDialogRef,
-  MatDialogTitle,
 } from '@angular/material/dialog';
 import { DialogData } from '@models/dialog.model';
 
@@ -16,7 +15,6 @@ import { DialogData } from '@models/dialog.model';
     MatButtonModule,
     MatDialogActions,
     MatDialogClose,
-    MatDialogTitle,
     MatDialogContent,
   ],
   templateUrl: './confirmation-dialog.component.html',
