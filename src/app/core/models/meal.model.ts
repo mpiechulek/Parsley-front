@@ -1,5 +1,4 @@
 import { FoodMealPosition, FoodModel } from './food.model';
-import { FoodNutritionGroupBase } from './nutrition.model';
 
 export interface FoodPosition {
   name: string;
@@ -23,5 +22,5 @@ export interface MealModel {
 export interface DailyMealsModel {
   date: Date;
   meals: MealModel[];
-  totalDailyMealNutritious: FoodNutritionGroupBase;
+  totalDailyMealNutritious: FoodModel;
 }

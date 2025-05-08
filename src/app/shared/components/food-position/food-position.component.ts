@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FoodPosition } from '@models/meal.model';
 import { DeleteButtonsComponent } from '../delete-buttons/delete-buttons.component';
 import { FormsModule } from '@angular/forms';
+import { effect } from '@angular/core';
+import { debouncedSignal } from '@shared/utils/debounce-time-signal';
 
 @Component({
   selector: 'app-food-position',
@@ -23,14 +25,29 @@ export class FoodPositionComponent {
   changeFoodQuantity = output<{ name: string; quantity: number }>();
   deleteFood = output<string>();
   foodQuantity = signal<number>(100);
+  foodQuery = debouncedSignal(this.foodQuantity, 300, 100);
+
+  //TODO: Effect triggers 2 times on input key press
+  constructor() {
+    effect(() => {
+      this.onChangeFoodQuantity(this.foodQuery());
+    });
+  }
 
   /**
    *
    */
-  onChangeFoodQuantity(): void {
+  onChangeFoodQuantity(foodQ: number): void {
+    const position = this.foodPosition();
+
+    // Validate inputs
+    if (!position.name || isNaN(foodQ)) {
+      throw new Error('Invalid food position or quantity');
+    }
+
     this.changeFoodQuantity.emit({
-      name: this.foodPosition.name,
-      quantity: this.foodQuantity(),
+      name: position.name,
+      quantity: Math.max(0, Number(foodQ)), // Ensure positive quantity
     });
   }
 
@@ -38,6 +55,10 @@ export class FoodPositionComponent {
    *
    */
   onDeleteFoodPosition(): void {
-    this.deleteFood.emit(this.foodPosition().name);
+    const position = this.foodPosition();
+    if (!position.name) {
+      throw new Error('Cannot delete food position without a name');
+    }
+    this.deleteFood.emit(position.name);
   }
 }

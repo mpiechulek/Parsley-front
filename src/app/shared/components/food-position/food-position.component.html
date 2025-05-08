@@ -1,12 +1,5 @@
 <mat-icon>panorama_fish_eye</mat-icon>
 <label for="food-position">{{ foodPosition().name }}</label>
-<input
-  id="food-position"
-  type="text"
-  matInput
-  [ngModel]="foodQuantity()"
-  (ngModelChange)="foodQuantity.set($event)"
-  (input)="onChangeFoodQuantity()"
-/>
+<input id="food-position" type="text" matInput [(ngModel)]="foodQuantity" />
 <p>[{{ foodPosition().unit }}]</p>
 <app-delete-buttons (deleteEvent)="onDeleteFoodPosition()" />
