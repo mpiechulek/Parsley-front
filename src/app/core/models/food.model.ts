@@ -1,3 +1,13 @@
+export interface FoodShortModel {
+  id: string;
+  name: string;
+}
+
+export interface FoodMealPosition {
+  food: FoodModel;
+  quantity: number;
+  unit: string;
+}
 export interface FoodModel {
   id: string;
   name: string;
@@ -8,11 +18,6 @@ export interface FoodModel {
   minerals: Minerals;
   glycemic_index: number;
 }
-export interface FoodShortModel {
-  id: string;
-  name: string;
-}
-
 export interface Protein {
   total: number;
   animal: number;
