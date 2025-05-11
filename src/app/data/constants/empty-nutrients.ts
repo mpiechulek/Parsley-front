@@ -1,4 +1,4 @@
-export const xxxx = {
+export const EmptyNutrients = {
   macroNutrients: {
     protein: {
       total: 0,
@@ -58,78 +58,7 @@ export const xxxx = {
     chromium: 0,
     molybdenum: 0,
   },
-  _id: '0',
-  id: '0',
-  name: 'No Name',
   calories: 0,
   water: 0,
-  glycemic_index: 0,
-};
-
-export const EmptyNutrients = {
-  macroNutrients: {
-    protein: {
-      total: 300,
-      animal: 2000,
-      plant: 100,
-    },
-    fats: {
-      total: 2000,
-      saturated: 1000,
-      monounsaturated: 2000,
-      polyunsaturated: 200,
-      trans: 12,
-    },
-    sugars: {
-      total: 3000,
-      glucose: 500,
-      fructose: 20,
-      sucrose: 1000,
-    },
-    carbohydrates: 200,
-    fiber: 2000,
-    cholesterol: 2000,
-  },
-  vitamins: {
-    vitamin_A: {
-      total: 200,
-      retinol: 300,
-      beta_carotene: 500,
-      IU_units: 8000,
-    },
-    vitamin_C: 0,
-    vitamin_E: 0,
-    vitamin_K: 0,
-    B1_thiamine: 0,
-    B2_riboflavin: 0,
-    B3_niacin: 0,
-    B5_pantothenic_acid: 0,
-    B6_pyridoxine: 0,
-    B7_biotin: 0,
-    B9_folic_acid: 0,
-    B12_cobalamin: 0,
-    vitamin_D: 0,
-  },
-  minerals: {
-    potassium: 0,
-    calcium: 0,
-    magnesium: 0,
-    phosphorus: 0,
-    sodium: 0,
-    iron: 0,
-    zinc: 0,
-    copper: 0,
-    manganese: 0,
-    selenium: 0,
-    iodine: 0,
-    fluoride: 0,
-    chromium: 0,
-    molybdenum: 0,
-  },
-  _id: '0',
-  id: '0',
-  name: 'No Name',
-  calories: 2000,
-  water: 500,
   glycemic_index: 0,
 };

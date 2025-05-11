@@ -1,8 +1,31 @@
 <app-page-header title="Meal Board" />
-<button mat-flat-button aria-label="Add meal button">
-  New Meal <mat-icon class="app-mat-icon-scale-1">add_circle_outline</mat-icon>
-</button>
-<div class="meal-card-wrapper">
-  <app-meal-card />
+<div class="meal-board__add-meal">
+  <button
+    mat-flat-button
+    aria-label="Add new meal button"
+    (click)="onAddMeal()"
+  >
+    New Meal
+    <mat-icon class="app-mat-icon-scale-1">add_circle_outline</mat-icon>
+  </button>
+
+  <div class="date-wrapper">
+    - Today: {{ currentDate | date: 'EEEE, MMMM d, yyyy' }}
+  </div>
 </div>
 
+@for (meal of mealBoardMeals.meals; track meal.name) {
+  <div class="meal-card-wrapper">
+    <app-meal-card
+      [nutrientData]="meal.mealNutritious"
+      [selectedFoods]="meal.ingredients"
+      [mealId]="meal.id"
+      [title]="meal.name"
+      [foodSearchList]="foodStore.foodShortList()"
+      (deleteMealEvent)="onDeleteMeal($event)"
+      (pickedFoodEvent)="onAddFoodToMeal($event)"
+      (deleteFoodFromMeal)="onDeleteFoodFromMeal($event)"
+      (updateMealFoodQuantity)="editFoodQuantity($event)"
+    />
+  </div>
+}

@@ -1,7 +1,7 @@
 @if (buttonStyle() === 'icon') {
   <button
     mat-icon-button
-    (click)="onDelete()"
+    (click)="deleteEvent.emit()"
     matTooltip="Delete food item"
     aria-label="Button that deletes food item when clicked"
   >
@@ -10,7 +10,7 @@
 } @else {
   <button
     mat-raised-button
-    (click)="onDelete()"
+    (click)="deleteEvent.emit()"
     aria-label="Button that deletes food item when clicked"
   >
     Delete <mat-icon class="app-mat-icon-scale-1">delete</mat-icon>

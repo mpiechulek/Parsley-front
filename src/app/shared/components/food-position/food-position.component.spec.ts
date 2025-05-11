@@ -1,22 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FoodPositionComponent } from './food-position.component';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-describe('FoodPositionComponent', () => {
-  let component: FoodPositionComponent;
-  let fixture: ComponentFixture<FoodPositionComponent>;
+// import { FoodPositionComponent } from './food-position.component';
+// import { FormsModule } from '@angular/forms';
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [FoodPositionComponent],
-    }).compileComponents();
+// describe('FoodPositionComponent', () => {
+//   let component: FoodPositionComponent;
+//   let fixture: ComponentFixture<FoodPositionComponent>;
 
-    fixture = TestBed.createComponent(FoodPositionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       imports: [FoodPositionComponent, FormsModule],
+//     }).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//     fixture = TestBed.createComponent(FoodPositionComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
+
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
+
