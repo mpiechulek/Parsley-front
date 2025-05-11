@@ -5,6 +5,7 @@ export interface FoodPosition {
   quantity: number;
   unit: string;
 }
+
 export interface IngredientModel {
   amount: number;
   food: FoodModel;
@@ -24,3 +25,4 @@ export interface DailyMealsModel {
   meals: MealModel[];
   totalDailyMealNutritious: FoodModel;
 }
+

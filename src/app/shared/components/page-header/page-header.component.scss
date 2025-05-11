@@ -1,6 +1,5 @@
 @use '../styles/abstracts/variables' as *;
 @use 'sass:map';
-
 h1 {
   font-size: map.get($typography-scales, 'heading-xl');
   font-weight: 500;

@@ -1,6 +1,5 @@
 @use '../styles/abstracts/variables' as *;
 @use 'sass:map';
-
 :host {
   width: 1200px;
   height: 100%;
@@ -16,7 +15,6 @@
       }
     }
   }
-
   .meal-card-wrapper {
     margin-top: 3rem;
   }

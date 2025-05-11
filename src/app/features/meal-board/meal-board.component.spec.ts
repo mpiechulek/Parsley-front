@@ -10,13 +10,12 @@
 //       imports: [MealBoardComponent],
 //       providers: [provideAnimationsAsync()],
 //     }).compileComponents();
-
 //     fixture = TestBed.createComponent(MealBoardComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
-
 //   it('should create', () => {
 //     expect(component).toBeTruthy();
 //   });
 // });
+
