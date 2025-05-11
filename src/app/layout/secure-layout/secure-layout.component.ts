@@ -7,6 +7,7 @@ import { SideNavComponent } from '@shared/components/side-nav/side-nav.component
 import { FoodStore } from '@features/food-state/food.state';
 import { FoodListShortResponse } from '@models/food.model';
 import { ApiService } from '@services/api.service';
+
 @Component({
   selector: 'app-secure-layout',
   imports: [

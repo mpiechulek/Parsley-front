@@ -6,6 +6,7 @@ import { RouteDataForDisplay } from '@models/route.model';
 import { RouterModule } from '@angular/router';
 import { PageHeaderComponent } from '@shared/components/page-header/page-header.component';
 import { MatRippleModule } from '@angular/material/core';
+
 @Component({
   selector: 'app-dashboard',
   imports: [
