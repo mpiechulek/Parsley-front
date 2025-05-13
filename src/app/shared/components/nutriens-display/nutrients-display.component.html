@@ -34,11 +34,11 @@
           <li>
             <strong>Total Protein:</strong>
             <div class="nutrient-list-item__value">
-              {{ nutrientData().macroNutrients.protein.total }}
+              {{ nutrientData().macroNutrients.protein.totalProteins }}
               <div class="unit-wrapper">g</div>
               <div class="percentage-wrapper">
                 ({{
-                  nutrientData().macroNutrients.protein.total
+                  nutrientData().macroNutrients.protein.totalProteins
                     | nutrientPercentage: 'water'
                 }}%)
               </div>
@@ -67,7 +67,9 @@
           <li>
             <strong>Total Fats:</strong>
             <div class="nutrient-list-item__value">
-              {{ nutrientData().macroNutrients.fats.total | number: '1.1-1' }}
+              {{
+                nutrientData().macroNutrients.fats.totalFats | number: '1.1-1'
+              }}
               <div class="unit-wrapper">g</div>
               <div class="percentage-wrapper">({{ '300' }}%)</div>
             </div>
@@ -125,7 +127,10 @@
           <li>
             <strong>Total Sugars:</strong>
             <div class="nutrient-list-item__value">
-              {{ nutrientData().macroNutrients.sugars.total | number: '1.1-1' }}
+              {{
+                nutrientData().macroNutrients.sugars.totalSugars
+                  | number: '1.1-1'
+              }}
               <div class="unit-wrapper">g</div>
               <div class="percentage-wrapper">({{ '20' }}%)</div>
             </div>
@@ -388,7 +393,10 @@
           <li>
             <strong>Vitamin A:</strong>
             <div class="nutrient-list-item__value">
-              {{ nutrientData().vitamins.vitamin_A.total | number: '1.3-3' }}
+              {{
+                nutrientData().vitamins.vitamin_A.totalVitamin_A
+                  | number: '1.3-3'
+              }}
               <div class="unit-wrapper">mg</div>
               <div class="percentage-wrapper">({{ '20' }}%)</div>
             </div>
