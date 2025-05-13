@@ -1,19 +1,19 @@
 export const EmptyNutrients = {
   macroNutrients: {
     protein: {
-      total: 0,
+      totalProteins: 0,
       animal: 0,
       plant: 0,
     },
     fats: {
-      total: 0,
+      totalFats: 0,
       saturated: 0,
       monounsaturated: 0,
       polyunsaturated: 0,
       trans: 0,
     },
     sugars: {
-      total: 0,
+      totalSugars: 0,
       glucose: 0,
       fructose: 0,
       sucrose: 0,
@@ -24,7 +24,7 @@ export const EmptyNutrients = {
   },
   vitamins: {
     vitamin_A: {
-      total: 0,
+      totalVitamin_A: 0,
       retinol: 0,
       beta_carotene: 0,
       IU_units: 0,

@@ -19,13 +19,13 @@ export interface FoodModel {
   glycemic_index: number;
 }
 export interface Protein {
-  total: number;
+  totalProteins: number;
   animal: number;
   plant: number;
 }
 
 export interface Fats {
-  total: number;
+  totalFats: number;
   saturated: number;
   monounsaturated: number;
   polyunsaturated: number;
@@ -33,14 +33,14 @@ export interface Fats {
 }
 
 export interface Sugars {
-  total: number;
+  totalSugars: number;
   glucose: number;
   fructose: number;
   sucrose: number;
 }
 
 export interface VitaminA {
-  total: number;
+  totalVitamin_A: number;
   retinol: number;
   beta_carotene: number;
   IU_units: number;

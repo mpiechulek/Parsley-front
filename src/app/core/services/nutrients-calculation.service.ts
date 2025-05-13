@@ -16,19 +16,19 @@ export class NutrientsCalculationService {
       name: '',
       macroNutrients: {
         protein: {
-          total: 0,
+          totalProteins: 0,
           animal: 0,
           plant: 0,
         },
         fats: {
-          total: 0,
+          totalFats: 0,
           saturated: 0,
           monounsaturated: 0,
           polyunsaturated: 0,
           trans: 0,
         },
         sugars: {
-          total: 0,
+          totalSugars: 0,
           glucose: 0,
           fructose: 0,
           sucrose: 0,
@@ -39,7 +39,7 @@ export class NutrientsCalculationService {
       },
       vitamins: {
         vitamin_A: {
-          total: 0,
+          totalVitamin_A: 0,
           retinol: 0,
           beta_carotene: 0,
           IU_units: 0,
@@ -86,10 +86,10 @@ export class NutrientsCalculationService {
 
       // Update macro nutrients
       totalNutrition.macroNutrients.protein = {
-        total: Number(
+        totalProteins: Number(
           (
-            totalNutrition.macroNutrients.protein.total +
-            foodPosition.food.macroNutrients.protein.total * quantity
+            totalNutrition.macroNutrients.protein.totalProteins +
+            foodPosition.food.macroNutrients.protein.totalProteins * quantity
           ).toFixed(1),
         ),
         animal: Number(
@@ -107,9 +107,9 @@ export class NutrientsCalculationService {
       };
 
       totalNutrition.macroNutrients.fats = {
-        total:
-          totalNutrition.macroNutrients.fats.total +
-          foodPosition.food.macroNutrients.fats.total * quantity,
+        totalFats:
+          totalNutrition.macroNutrients.fats.totalFats +
+          foodPosition.food.macroNutrients.fats.totalFats * quantity,
         saturated:
           totalNutrition.macroNutrients.fats.saturated +
           foodPosition.food.macroNutrients.fats.saturated * quantity,
@@ -125,9 +125,9 @@ export class NutrientsCalculationService {
       };
 
       totalNutrition.macroNutrients.sugars = {
-        total:
-          totalNutrition.macroNutrients.sugars.total +
-          foodPosition.food.macroNutrients.sugars.total * quantity,
+        totalSugars:
+          totalNutrition.macroNutrients.sugars.totalSugars +
+          foodPosition.food.macroNutrients.sugars.totalSugars * quantity,
         glucose:
           totalNutrition.macroNutrients.sugars.glucose +
           foodPosition.food.macroNutrients.sugars.glucose * quantity,
@@ -148,9 +148,9 @@ export class NutrientsCalculationService {
 
       // Update vitamins
       totalNutrition.vitamins.vitamin_A = {
-        total:
-          totalNutrition.vitamins.vitamin_A.total +
-          foodPosition.food.vitamins.vitamin_A.total * quantity,
+        totalVitamin_A:
+          totalNutrition.vitamins.vitamin_A.totalVitamin_A +
+          foodPosition.food.vitamins.vitamin_A.totalVitamin_A * quantity,
         retinol:
           totalNutrition.vitamins.vitamin_A.retinol +
           foodPosition.food.vitamins.vitamin_A.retinol * quantity,

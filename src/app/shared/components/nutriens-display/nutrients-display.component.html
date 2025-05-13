@@ -14,7 +14,11 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().calories | number: '1.0-0' }}
               <div class="unit-wrapper">kcal</div>
-              <div class="percentage-wrapper">({{ '2000' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().calories | nutrientPercentage: 'calories'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -22,7 +26,9 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().water | number: '1.0-0' }}
               <div class="unit-wrapper">ml</div>
-              <div class="percentage-wrapper">({{ '100' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{ nutrientData().water | nutrientPercentage: 'water' }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -30,7 +36,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().macroNutrients.protein.total }}
               <div class="unit-wrapper">g</div>
-              <div class="percentage-wrapper">({{ '300' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().macroNutrients.protein.total
+                    | nutrientPercentage: 'water'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -114,7 +125,7 @@
           <li>
             <strong>Total Sugars:</strong>
             <div class="nutrient-list-item__value">
-             {{ nutrientData().macroNutrients.sugars.total | number: '1.1-1' }}
+              {{ nutrientData().macroNutrients.sugars.total | number: '1.1-1' }}
               <div class="unit-wrapper">g</div>
               <div class="percentage-wrapper">({{ '20' }}%)</div>
             </div>
@@ -182,7 +193,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.potassium | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'potassium'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -190,7 +206,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.calcium | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'calcium'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -198,7 +219,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.magnesium | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'magnesium'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -206,7 +232,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.phosphorus | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'phosphorus'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -214,7 +245,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.sodium | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'sodium'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -222,7 +258,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.iron | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'iron'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -230,7 +271,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.zinc | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'zinc'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -238,7 +284,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.copper | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'copper'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -246,7 +297,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.manganese | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'manganese'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -254,7 +310,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.selenium | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'selenium'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -262,7 +323,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.iodine | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'iodine'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -270,7 +336,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.fluoride | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'fluoride'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -278,7 +349,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.chromium | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'chromium'
+                }}%)
+              </div>
             </div>
           </li>
           <li>
@@ -286,7 +362,12 @@
             <div class="nutrient-list-item__value">
               {{ nutrientData().minerals.molybdenum | number: '1.2-2' }}
               <div class="unit-wrapper">mg</div>
-              <div class="percentage-wrapper">({{ '20' }}%)</div>
+              <div class="percentage-wrapper">
+                ({{
+                  nutrientData().minerals.potassium
+                    | nutrientPercentage: 'molybdenum'
+                }}%)
+              </div>
             </div>
           </li>
         </ul>
