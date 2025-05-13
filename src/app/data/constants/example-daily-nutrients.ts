@@ -21,7 +21,7 @@ export const exampleDailyNutrients: FoodNutritionGroupBase = {
     },
     carbohydrates: 70,
     fiber: 30,
-    cholesterol: 0.3,
+    cholesterol: 300,
   },
   vitamins: {
     vitamin_C: 90,

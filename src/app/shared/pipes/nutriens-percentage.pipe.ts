@@ -12,12 +12,15 @@ export class NutrientPercentagePipe implements PipeTransform {
     const value = this.recursiveSearch(exampleDailyNutrients, nutrientKeyName);
 
     if (!!value && typeof value === 'number') {
-      return Number(((nutrientValue * 100) / value).toFixed(1));
+      return Number(((nutrientValue * 100) / value).toFixed(0));
     }
 
     return null;
   }
 
+  /**
+   *
+   */
   recursiveSearch(
     obj: FoodNutritionGroupBase,
     targetKey: string,

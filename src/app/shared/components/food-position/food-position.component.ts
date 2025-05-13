@@ -25,6 +25,7 @@ export class FoodPositionComponent {
   changeFoodQuantity = output<{ name: string; quantity: number }>();
   deleteFood = output<string>();
   foodQuantity = signal<number>(100);
+  //Debounce time 300ms
   foodQuery = debouncedSignal(this.foodQuantity, 300, 100);
 
   //TODO: Effect triggers 2 times on input key press
