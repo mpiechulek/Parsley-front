@@ -10,10 +10,12 @@ import { exampleDailyNutrients } from '@data/constants/example-daily-nutrients';
 export class NutrientPercentagePipe implements PipeTransform {
   transform(nutrientValue: number, nutrientKeyName: string): number | null {
     if (nutrientValue === 0) return 0;
+    
     const value = this.recursiveSearch(exampleDailyNutrients, nutrientKeyName);
 
     if (!!value && typeof value === 'number') {
       if (value === 0) return 0;
+
       return Number(((nutrientValue * 100) / value).toFixed(0));
     }
 
