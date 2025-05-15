@@ -12,7 +12,6 @@ import { NutrientPercentagePipe } from '../../pipes/nutriens-percentage.pipe';
 export class NutrientsDisplayComponent {
   nutrientData = input<FoodModel>({} as FoodModel);
   displayName = input<boolean>(true);
-
   get isObjectNotEmpty(): boolean {
     return !!Object.keys(this.nutrientData()).length;
   }
