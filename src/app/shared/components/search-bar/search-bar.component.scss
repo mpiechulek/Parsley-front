@@ -1,13 +1,13 @@
 .search-form {
   display: flex;
-  max-width: 350px;
+  width: 100%;
+  min-width: 350px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   .search-button {
-    // font-size: 1.4rem;
     margin-left: 2rem;
-    height: 56px;
     width: 120px;
+    margin-bottom: 1.6rem;
   }
 }
