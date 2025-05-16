@@ -1,13 +1,29 @@
+@use '../styles/abstracts/variables' as *;
+@use '../styles/abstracts/mixins' as mixin;
+
 .search-form {
   display: flex;
   width: 100%;
-  min-width: 350px;
   justify-content: center;
   align-items: center;
 
+  @include mixin.response('xs') {
+    flex-direction: column-reverse;
+    width: calc(100vw - 32px);
+  }
+
+  mat-form-field {
+    width: 100%;
+    padding-top: 8px;
+  }
+
   .search-button {
     margin-left: 2rem;
-    width: 120px;
+    width: 130px;
     margin-bottom: 1.6rem;
+    @include mixin.response('xs') {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }

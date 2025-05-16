@@ -15,7 +15,7 @@
 // In this spot we are using em's because there value is global
 @mixin response($breakpoint) {
   @if $breakpoint==xs {
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 430px) {
       @content;
     }
 
@@ -23,7 +23,7 @@
   }
 
   @if $breakpoint==sm {
-    @media only screen and (max-width: 48em) {
+    @media only screen and (max-width: 600px) {
       @content;
     }
 
@@ -31,7 +31,7 @@
   }
 
   @if $breakpoint==md {
-    @media only screen and (max-width: 62em) {
+    @media only screen and (max-width: 890px) {
       @content;
     }
 
@@ -39,19 +39,19 @@
   }
 
   @if $breakpoint==ld {
-    @media only screen and (max-width: 75em) {
+    @media only screen and (max-width: 1050px) {
       @content;
     }
 
-    // 1200px
+    // 1000px
   }
 
   @if $breakpoint==xld {
-    @media only screen and (max-width: 87.5em) {
+    @media only screen and (max-width: 1230px) {
       @content;
     }
 
-    // 1400px
+    // 1430px
   }
 }
 
@@ -61,4 +61,3 @@
   justify-content: center;
   align-items: center;
 }
-
