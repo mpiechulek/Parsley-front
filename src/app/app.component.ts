@@ -27,12 +27,18 @@ export class AppComponent {
     // based on the data property of the route. The title is set to "Parsley | Route Title"
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.titleService.setTitle(
-          `Parsley | ${
-            this.activatedRoute.snapshot.firstChild?.data['title'] ||
-            'Route Title'
-          }`,
-        );
+        let route = this.router.routerState.root;
+        let title = '';
+
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
+
+        if (route.snapshot.data?.['title']) {
+          title = route.snapshot.data['title'];
+        }
+
+        this.titleService.setTitle(`Parsley | ${title}`);
       }
     });
     // Generate the routes for the side nav
