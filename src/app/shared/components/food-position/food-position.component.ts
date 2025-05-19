@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  input,
-  output,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, linkedSignal, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FoodPosition } from '@models/meal.model';
@@ -21,17 +15,17 @@ import { debouncedSignal } from '@shared/utils/debounce-time-signal';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FoodPositionComponent {
-  foodPosition = input<FoodPosition>({} as FoodPosition);
   changeFoodQuantity = output<{ name: string; quantity: number }>();
   deleteFood = output<string>();
-  foodQuantity = signal<number>(100);
+  foodPosition = input<FoodPosition>({} as FoodPosition);
+  foodQuantity = linkedSignal<number>(() => this.foodPosition().quantity);
   //Debounce time 300ms
-  foodQuery = debouncedSignal(this.foodQuantity, 300, 100);
+  foodQuery = debouncedSignal(this.foodQuantity, 300, this.foodQuantity());
 
   //TODO: Effect triggers 2 times on input key press
   constructor() {
     effect(() => {
-      this.onChangeFoodQuantity(this.foodQuery());
+      if (this.foodPosition()) this.onChangeFoodQuantity(this.foodQuery());
     });
   }
 
@@ -43,13 +37,13 @@ export class FoodPositionComponent {
 
     // Validate inputs
     if (!position.name || isNaN(foodQ)) {
-      throw new Error('Invalid food position or quantity');
+      return;
+    } else {
+      this.changeFoodQuantity.emit({
+        name: position.name,
+        quantity: Math.max(0, Number(foodQ)), // Ensure positive quantity
+      });
     }
-
-    this.changeFoodQuantity.emit({
-      name: position.name,
-      quantity: Math.max(0, Number(foodQ)), // Ensure positive quantity
-    });
   }
 
   /**

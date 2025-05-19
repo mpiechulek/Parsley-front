@@ -1,14 +1,10 @@
 <mat-toolbar>
   <div class="header-container">
     <div class="header-logo-wrapper">
-      <button
-        mat-icon-button
-        aria-label="Menu button"
-        (click)="onToggleSideNav()"
-      >
+      <button mat-icon-button aria-label="Menu button" (click)="onToggleSideNav()">
         <mat-icon>menu</mat-icon>
       </button>
-      <h1><a [routerLink]="'layout/dashboard'">Parsley</a></h1>
+      <h1><a routerLink="/layout/dashboard">Parsley</a></h1>
     </div>
     <div class="example-spacer"></div>
     <button mat-raised-button aria-label="Logout button" (click)="onLogout()">

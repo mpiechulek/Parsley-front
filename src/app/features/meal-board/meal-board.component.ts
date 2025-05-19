@@ -34,6 +34,13 @@ export class MealBoardComponent {
   //TODO: If we have the id we delete the card first on BE side by id and then if
   //TODO: successful on FE side
 
+  constructor() {
+    const storeMeals = this.foodStore.dailyMeals();
+    if (storeMeals.meals) {
+      this.mealBoardMeals = storeMeals;
+    }
+  }
+
   /**
    *
    */
