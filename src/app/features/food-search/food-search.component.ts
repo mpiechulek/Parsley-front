@@ -5,20 +5,14 @@ import { ApiService } from '@services/api.service';
 import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
 import { NutrientsDisplayComponent } from '@shared/components/nutriens-display/nutrients-display.component';
 import { PageHeaderComponent } from '../../shared/components/page-header/page-header.component';
-import { FoodStore } from '@features/food-state/food.state';
+import { FoodStore } from 'app/state/food.state';
 
 @Component({
   selector: 'app-food-search',
-  imports: [
-    CommonModule,
-    SearchBarComponent,
-    NutrientsDisplayComponent,
-    PageHeaderComponent,
-  ],
+  imports: [CommonModule, SearchBarComponent, NutrientsDisplayComponent, PageHeaderComponent],
   templateUrl: './food-search.component.html',
   styleUrl: './food-search.component.scss',
 })
-
 export class FoodSearchComponent {
   apiService = inject(ApiService);
   foodData = signal<FoodModel>({} as FoodModel);

@@ -29,10 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.scss"
-            ],
+            "styles": ["@angular/material/prebuilt-themes/azure-blue.css", "src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },
@@ -78,7 +75,10 @@
               "buildTarget": "Parsley-front:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.config.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
@@ -95,10 +95,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.scss"
-            ],
+            "styles": ["@angular/material/prebuilt-themes/azure-blue.css", "src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },

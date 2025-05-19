@@ -1,17 +1,12 @@
-import {
-  patchState,
-  signalState,
-  signalStore,
-  withHooks,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
 import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { FoodState } from '@models/food-state.model';
 import { FoodShortModel } from '@models/food.model';
+import { DailyMealsModel } from '@models/meal.model';
 
 export const initialFoodState = signalState<FoodState>({
   foodShortList: [] as FoodShortModel[],
+  dailyMeals: {} as DailyMealsModel,
   error: null,
 });
 
@@ -22,6 +17,10 @@ export const FoodStore = signalStore(
   withMethods((store) => ({
     stateInit: (): void => {
       patchState(store);
+    },
+    saveDailyMeals: (dailyMeals: DailyMealsModel): void => {
+      patchState(store, { dailyMeals });
+      // api call
     },
     clearState: (): void => {
       patchState(store, initialFoodState);

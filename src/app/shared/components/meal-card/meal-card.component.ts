@@ -6,11 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { NutrientsDisplayComponent } from '../nutriens-display/nutrients-display.component';
-import {
-  FoodMealPosition,
-  FoodModel,
-  FoodShortModel,
-} from '@models/food.model';
+import { FoodMealPosition, FoodModel, FoodShortModel } from '@models/food.model';
 import { DeleteButtonsComponent } from '../delete-buttons/delete-buttons.component';
 import { FoodPositionComponent } from '../food-position/food-position.component';
 import { DatePipe } from '@angular/common';
@@ -57,6 +53,7 @@ export class MealCardComponent {
     quantity: number;
   }>();
   pickedFoodEvent = output<{ foodId: string; mealId: string }>({});
+  saveMeal = output();
 
   /**
    *
@@ -70,6 +67,13 @@ export class MealCardComponent {
    */
   onPickFood(foodId: string): void {
     this.pickedFoodEvent.emit({ foodId, mealId: this.mealId() });
+  }
+
+  /**
+   *
+   */
+  onSaveMeal(): void {
+    this.saveMeal.emit();
   }
 
   /**

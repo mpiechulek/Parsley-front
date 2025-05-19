@@ -38,20 +38,14 @@
       <!-- buttons -->
       <div class="meal-card-content__buttons">
         <div class="meal-card-content-buttons-wrapper">
-          <button mat-flat-button aria-label="Save meal">
+          <button mat-flat-button aria-label="Save meal" (click)="onSaveMeal()">
             Save <mat-icon class="app-mat-icon-scale-1">save</mat-icon>
           </button>
-          <app-delete-buttons
-            (deleteEvent)="openDialog()"
-            buttonStyle="text-icon"
-          />
+          <app-delete-buttons (deleteEvent)="openDialog()" buttonStyle="text-icon" />
         </div>
       </div>
     </div>
     <!-- nutrients list -->
-    <app-nutrients-display
-      [nutrientData]="nutrientData()"
-      [displayName]="displayName"
-    />
+    <app-nutrients-display [nutrientData]="nutrientData()" [displayName]="displayName" />
   </mat-expansion-panel>
 </mat-accordion>

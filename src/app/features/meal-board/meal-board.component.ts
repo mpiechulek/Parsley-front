@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { FoodStore } from '@features/food-state/food.state';
+import { FoodStore } from 'app/state/food.state';
 import { FoodModel, FoodResponse } from '@models/food.model';
 import { DailyMealsModel, MealModel } from '@models/meal.model';
 import { ApiService } from '@services/api.service';
@@ -12,13 +12,7 @@ import { PageHeaderComponent } from '@shared/components/page-header/page-header.
 
 @Component({
   selector: 'app-meal-board',
-  imports: [
-    MealCardComponent,
-    PageHeaderComponent,
-    MatIconModule,
-    MatButtonModule,
-    DatePipe,
-  ],
+  imports: [MealCardComponent, PageHeaderComponent, MatIconModule, MatButtonModule, DatePipe],
   templateUrl: './meal-board.component.html',
   styleUrl: './meal-board.component.scss',
 })
@@ -57,9 +51,15 @@ export class MealBoardComponent {
    *
    */
   onDeleteMeal(mealId: string): void {
-    this.mealBoardMeals.meals = this.mealBoardMeals.meals.filter(
-      (meal) => meal.id !== mealId,
-    );
+    this.mealBoardMeals.meals = this.mealBoardMeals.meals.filter((meal) => meal.id !== mealId);
+    this.onSaveMeals();
+  }
+
+  /**
+   *
+   */
+  onSaveMeals(): void {
+    this.foodStore.saveDailyMeals(this.mealBoardMeals);
   }
 
   /**
@@ -70,15 +70,13 @@ export class MealBoardComponent {
     if (this.checkIfFoodAlreadyInMeal(searchData.foodId)) return;
 
     //Fetch food data
-    this.apiService
-      .getFood(searchData.foodId)
-      .subscribe((food: FoodResponse) => {
-        this.pickedFood = food.data;
-        if (food.data) {
-          // Add food to meal
-          this.addFoodToMeal(searchData.mealId, food.data);
-        }
-      });
+    this.apiService.getFood(searchData.foodId).subscribe((food: FoodResponse) => {
+      this.pickedFood = food.data;
+      if (food.data) {
+        // Add food to meal
+        this.addFoodToMeal(searchData.mealId, food.data);
+      }
+    });
   }
 
   /**
@@ -124,11 +122,7 @@ export class MealBoardComponent {
   /**
    *
    */
-  editFoodQuantity(data: {
-    name: string;
-    mealId: string;
-    quantity: number;
-  }): void {
+  editFoodQuantity(data: { name: string; mealId: string; quantity: number }): void {
     this.mealBoardMeals.meals.find((meal) => {
       if (meal.id === data.mealId) {
         meal.ingredients.find((ingredient) => {
