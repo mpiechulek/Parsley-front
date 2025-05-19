@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { GenderPickerComponent } from './gender-picker/gender-picker.component';
 import { NavRoutesService } from '@services/nav-routes.service';
 import { RouteDataForDisplay } from '@models/route.model';
 import { RouterModule } from '@angular/router';
@@ -9,13 +8,7 @@ import { MatRippleModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [
-    CommonModule,
-    GenderPickerComponent,
-    RouterModule,
-    PageHeaderComponent,
-    MatRippleModule,
-  ],
+  imports: [CommonModule, RouterModule, PageHeaderComponent, MatRippleModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

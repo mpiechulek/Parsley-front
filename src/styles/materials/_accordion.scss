@@ -1,4 +1,5 @@
 @use '../styles/abstracts/variables' as *;
+@use '../styles/abstracts/mixins' as mixin;
 
 mat-panel-title {
   font-size: $font-size-body-xl;
@@ -6,4 +7,10 @@ mat-panel-title {
 
 mat-panel-description {
   font-size: $font-size-body-md;
+}
+
+.mat-expansion-panel-body {
+  @include mixin.response('sm') {
+    padding: 12px !important;
+  }
 }
