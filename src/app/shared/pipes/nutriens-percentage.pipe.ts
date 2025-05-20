@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { FoodNutritionGroupBase } from '@models/nutrition.model';
+import { FoodGroupBase } from '@models/nutrition.model';
 import { exampleDailyNutrients } from '@data/constants/example-daily-nutrients';
 
 @Pipe({
@@ -10,7 +10,7 @@ import { exampleDailyNutrients } from '@data/constants/example-daily-nutrients';
 export class NutrientPercentagePipe implements PipeTransform {
   transform(nutrientValue: number, nutrientKeyName: string): number | null {
     if (nutrientValue === 0) return 0;
-    
+
     const value = this.recursiveSearch(exampleDailyNutrients, nutrientKeyName);
 
     if (!!value && typeof value === 'number') {
@@ -25,10 +25,7 @@ export class NutrientPercentagePipe implements PipeTransform {
   /**
    *
    */
-  recursiveSearch(
-    obj: FoodNutritionGroupBase,
-    targetKey: string,
-  ): undefined | null | number | object {
+  recursiveSearch(obj: FoodGroupBase, targetKey: string): undefined | null | number | object {
     for (const [currentKey, value] of Object.entries(obj)) {
       // If we found the key and it's not an object, return the value
       if (currentKey === targetKey && typeof value !== 'object') {

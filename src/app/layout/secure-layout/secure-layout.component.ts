@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { SideNavComponent } from '@shared/components/side-nav/side-nav.component';
 import { FoodStore } from 'app/state/food.state';
-import { FoodListShortResponse } from '@models/food.model';
 import { ApiService } from '@services/api.service';
 
 @Component({
@@ -22,11 +21,8 @@ export class SecureLayoutComponent implements OnInit {
   @ViewChild('drawer') drawer: MatSidenav | undefined;
 
   ngOnInit(): void {
-    // 1. Call the food state and check if the list is there
-    if (this.foodStore.foodShortList.length === 0) {
-      // 2. If the list is empty, call the getFoodsShortList method
-      this.getFoodsShortList();
-    }
+    this.foodStore.getFoodsShortList();
+    this.foodStore.getNutritionData();
   }
 
   /**
@@ -34,14 +30,5 @@ export class SecureLayoutComponent implements OnInit {
    */
   onToggleSideNav(): void {
     this.drawer?.toggle();
-  }
-
-  /**
-   * Get food short list
-   */
-  getFoodsShortList(): void {
-    this.apiService.getFoodsShortList().subscribe((foodSearchList: FoodListShortResponse) => {
-      this.foodStore.setFoodShortList(foodSearchList.data);
-    });
   }
 }

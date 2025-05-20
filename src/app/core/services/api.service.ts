@@ -2,12 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@environments/environment.development';
 import { FoodListShortResponse, FoodResponse } from '@models/food.model';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  Observable,
-  shareReplay,
-} from 'rxjs';
+import { NutritionResponse } from '@models/nutrition.model';
+import { debounceTime, distinctUntilChanged, Observable, shareReplay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -44,11 +40,7 @@ export class ApiService {
   getFood(foodId: string): Observable<FoodResponse> {
     return this.httpClient
       .get<FoodResponse>(`${this.apiUrl}/foods/${foodId}`)
-      .pipe(
-        debounceTime(300),
-        distinctUntilChanged(),
-        shareReplay({ bufferSize: 1, refCount: true }),
-      );
+      .pipe(debounceTime(300), distinctUntilChanged(), shareReplay({ bufferSize: 1, refCount: true }));
   }
 
   /**
@@ -56,8 +48,14 @@ export class ApiService {
    * @returns
    */
   getFoodsShortList(): Observable<FoodListShortResponse> {
-    return this.httpClient.get<FoodListShortResponse>(
-      `${this.apiUrl}/foods/short-list`,
-    );
+    return this.httpClient.get<FoodListShortResponse>(`${this.apiUrl}/foods/short-list`);
+  }
+
+  /**
+   *
+   * @returns
+   */
+  getNutritionData(): Observable<NutritionResponse> {
+    return this.httpClient.get<NutritionResponse>(`${this.apiUrl}/nutrition`);
   }
 }

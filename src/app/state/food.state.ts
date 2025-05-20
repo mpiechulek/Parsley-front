@@ -1,12 +1,17 @@
 import { patchState, signalState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
 import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { FoodState } from '@models/food-state.model';
-import { FoodShortModel } from '@models/food.model';
+import { FoodListShortResponse, FoodShortModel } from '@models/food.model';
 import { DailyMealsModel } from '@models/meal.model';
+import { FoodGroupBase, NutritionModel, NutritionResponse } from '@models/nutrition.model';
+import { ApiService } from '@services/api.service';
+import { inject } from '@angular/core';
 
 export const initialFoodState = signalState<FoodState>({
   foodShortList: [] as FoodShortModel[],
   dailyMeals: {} as DailyMealsModel,
+  dailyNutrition: {} as FoodGroupBase,
+  dailyNutritionGroups: {} as NutritionModel,
   error: null,
 });
 
@@ -14,13 +19,39 @@ export const FoodStore = signalStore(
   { providedIn: 'root' },
   withState<FoodState>(initialFoodState),
   withDevtools('foodStore'),
-  withMethods((store) => ({
+  withMethods((store, apiService = inject(ApiService)) => ({
     stateInit: (): void => {
       patchState(store);
     },
     saveDailyMeals: (dailyMeals: DailyMealsModel): void => {
       patchState(store, { dailyMeals });
       // api call
+    },
+    getNutritionData: (): void => {
+      const key = 'dailyNutritionGroups';
+      //check if nutrition lis in localstorage
+      const stringValue = localStorage.getItem(key);
+      const jasonValue = stringValue ? JSON.parse(stringValue) : null;
+      if (!jasonValue) {
+        apiService.getNutritionData().subscribe({
+          next: (dailyNutritionGroupsRes: NutritionResponse) => {
+            const response = dailyNutritionGroupsRes.data;
+            // update state
+            patchState(store, { dailyNutritionGroups: response });
+            // update localstorage
+            localStorage.setItem(key, JSON.stringify(response));
+          },
+        });
+      } else {
+        patchState(store, { dailyNutritionGroups: jasonValue });
+      }
+    },
+    getFoodsShortList: (): void => {
+      apiService.getFoodsShortList().subscribe({
+        next: (foodSearchList: FoodListShortResponse) => {
+          patchState(store, { foodShortList: foodSearchList.data });
+        },
+      });
     },
     clearState: (): void => {
       patchState(store, initialFoodState);
@@ -32,6 +63,9 @@ export const FoodStore = signalStore(
   withHooks({
     onInit: ({ stateInit }): void => {
       stateInit();
+    },
+    onDestroy: ({ clearState }): void => {
+      clearState();
     },
   }),
 );

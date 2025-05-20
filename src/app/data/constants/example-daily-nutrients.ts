@@ -1,8 +1,10 @@
-import { FoodNutritionGroupBase } from '@models/nutrition.model';
+import { FoodGroupBase } from '@models/nutrition.model';
 
-export const exampleDailyNutrients: FoodNutritionGroupBase = {
+export const exampleDailyNutrients: FoodGroupBase = {
   age_span: '20-64 years',
   calories: 2000,
+  name: '123',
+  source: 'abc',
   water: 2000,
   macroNutrients: {
     protein: { totalProteins: 60, animal: 40, plant: 20 },
