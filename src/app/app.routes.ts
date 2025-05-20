@@ -31,10 +31,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadComponent: () =>
-          import('./features/dashboard/dashboard.component').then(
-            (m) => m.DashboardComponent,
-          ),
+        loadComponent: () => import('./features/dashboard/dashboard.component').then((m) => m.DashboardComponent),
         data: {
           title: 'Dashboard',
           name: 'Dashboard',
@@ -42,11 +39,17 @@ export const routes: Routes = [
         } as RouteData,
       },
       {
+        path: 'settings',
+        loadComponent: () => import('./features/settings/settings.component').then((m) => m.SettingsComponent),
+        data: {
+          title: 'Settings',
+          name: 'Settings',
+          showInNav: true,
+        } as RouteData,
+      },
+      {
         path: 'food-search',
-        loadComponent: () =>
-          import('./features/food-search/food-search.component').then(
-            (m) => m.FoodSearchComponent,
-          ),
+        loadComponent: () => import('./features/food-search/food-search.component').then((m) => m.FoodSearchComponent),
         data: {
           title: 'Food Search',
           name: 'Food Search',
@@ -54,11 +57,17 @@ export const routes: Routes = [
         } as RouteData,
       },
       {
+        path: 'meal-search',
+        loadComponent: () => import('./features/meal-search/meal-search.component').then((m) => m.MealSearchComponent),
+        data: {
+          title: 'Meal Search',
+          name: 'Meal Search',
+          showInNav: true,
+        } as RouteData,
+      },
+      {
         path: 'meal-board',
-        loadComponent: () =>
-          import('./features/meal-board/meal-board.component').then(
-            (m) => m.MealBoardComponent,
-          ),
+        loadComponent: () => import('./features/meal-board/meal-board.component').then((m) => m.MealBoardComponent),
         data: {
           title: 'Meal Board',
           name: 'Meal Board',
@@ -67,10 +76,7 @@ export const routes: Routes = [
       },
       {
         path: 'recipes',
-        loadComponent: () =>
-          import('./features/recipes/recipes.component').then(
-            (m) => m.RecipesComponent,
-          ),
+        loadComponent: () => import('./features/recipes/recipes.component').then((m) => m.RecipesComponent),
         data: {
           title: 'Recipes',
           name: 'Recipes',
@@ -80,9 +86,7 @@ export const routes: Routes = [
       {
         path: 'meal-statistics',
         loadComponent: () =>
-          import('./features/meal-statistics/meal-statistics.component').then(
-            (m) => m.MealStatisticsComponent,
-          ),
+          import('./features/meal-statistics/meal-statistics.component').then((m) => m.MealStatisticsComponent),
         data: {
           title: 'Meal Statistics',
           name: 'Meal Statistics',
