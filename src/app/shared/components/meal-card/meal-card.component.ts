@@ -37,6 +37,7 @@ export class MealCardComponent {
 
   displayName = false;
   currentDate = new Date();
+  notSavedChanges = false;
 
   title = input<string>('New Meal');
   isExpanded = input<boolean>(false);
@@ -67,6 +68,7 @@ export class MealCardComponent {
    */
   onPickFood(foodId: string): void {
     this.pickedFoodEvent.emit({ foodId, mealId: this.mealId() });
+    this.notSavedChanges = true;
   }
 
   /**
@@ -74,6 +76,7 @@ export class MealCardComponent {
    */
   onSaveMeal(): void {
     this.saveMeal.emit();
+    this.notSavedChanges = false;
   }
 
   /**
@@ -104,6 +107,7 @@ export class MealCardComponent {
       mealId: this.mealId(),
       quantity: foodData.quantity,
     });
+    this.notSavedChanges = true;
   }
 
   /**
@@ -112,5 +116,6 @@ export class MealCardComponent {
    */
   onDeleteFoodPosition(name: string): void {
     this.deleteFoodFromMeal.emit({ name, mealId: this.mealId() });
+    this.notSavedChanges = true;
   }
 }

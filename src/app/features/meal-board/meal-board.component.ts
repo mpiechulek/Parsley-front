@@ -27,14 +27,12 @@ export class MealBoardComponent {
     meals: [],
     totalDailyMealNutritious: {} as FoodModel,
   };
+
   currentDate = new Date();
   pickedFood: FoodModel = {} as FoodModel;
 
-  //TODO: If not saved we delete the meal card by creation date in miliseconds,
-  //TODO: If we have the id we delete the card first on BE side by id and then if
-  //TODO: successful on FE side
-
   constructor() {
+    // TODO: Load from state 1.check state 2.fetch and load .If no records empty array from backend(don't render anything)
     const storeMeals = this.foodStore.dailyMeals();
     if (storeMeals.meals) {
       this.mealBoardMeals = storeMeals;

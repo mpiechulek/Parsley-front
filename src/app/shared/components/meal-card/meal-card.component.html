@@ -7,6 +7,9 @@
       <mat-panel-description>
         <!-- Time in HH:mm format -->
         <div>{{ currentDate | date: 'HH:mm' }}</div>
+        @if (notSavedChanges) {
+          <span class="meal-save-warning">You have unsaved meal changes</span>
+        }
       </mat-panel-description>
     </mat-expansion-panel-header>
     <div class="meal-card-content">
