@@ -1,7 +1,10 @@
+@use '../styles/abstracts/variables' as *;
+@use '../styles/abstracts/mixins' as mixin;
+
 .dashboard {
   /* Create a responsive grid container */
   display: flex;
-  height: auto;
+  height: 85%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -10,10 +13,15 @@
     /* Make navigation section a grid */
     display: grid;
     grid-template-columns: repeat(3, 25rem);
-    grid-template-rows: repeat(4, 15rem);
+    grid-template-rows: repeat(4, 10rem);
     gap: 10px;
     border-radius: 8px;
     margin-top: 5rem;
+    @include mixin.response('md') {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(5, 5rem);
+    }
 
     &__item {
       /* Style individual navigation items */
@@ -52,6 +60,12 @@
     grid-column-end: 1;
     grid-row-start: 1;
     grid-row-end: 2;
+    @include mixin.response('md') {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
   }
 
   .grid-nav__item:nth-child(2) {
@@ -59,6 +73,12 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
+    @include mixin.response('md') {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
   }
 
   .grid-nav__item:nth-child(3) {
@@ -66,6 +86,12 @@
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 5;
+    @include mixin.response('md') {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
   }
 
   .grid-nav__item:nth-child(4) {
@@ -73,6 +99,12 @@
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 5;
+    @include mixin.response('md') {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
   }
 
   .grid-nav__item:nth-child(5) {
@@ -80,6 +112,21 @@
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 5;
+
+    @include mixin.response('md') {
+      grid-row-start: 5;
+      grid-row-end: 6;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
+  .grid-nav__item:nth-child(6) {
+    @include mixin.response('md') {
+      grid-row-start: 6;
+      grid-row-end: 7;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
   }
 
   .grid-nav__item:hover {

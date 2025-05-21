@@ -15,6 +15,6 @@ export class SideNavComponent implements OnInit {
   routesForNav: RouteDataForDisplay[] = [];
 
   ngOnInit(): void {
-    this.routesForNav = this.navRoutesService.routesForNav;
+    this.routesForNav = this.navRoutesService.routesForNav.sort((a, b) => a.name.localeCompare(b.name));
   }
 }

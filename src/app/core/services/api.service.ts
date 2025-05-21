@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { environment } from '@environments/environment.development';
+import { environment } from '@environments/environment';
 import { FoodListShortResponse, FoodResponse } from '@models/food.model';
 import { NutritionResponse } from '@models/nutrition.model';
 import { debounceTime, distinctUntilChanged, Observable, shareReplay } from 'rxjs';

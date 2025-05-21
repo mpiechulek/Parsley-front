@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '@environments/environment.development';
+import { environment } from '@environments/environment';
 import { AuthService } from '@services/auth.service';
 import { GlobalStore } from 'app/state/global.state';
 import { BehaviorSubject, catchError, EMPTY, filter, switchMap, take, throwError } from 'rxjs';
@@ -15,8 +15,7 @@ const tokenSubject = new BehaviorSubject<string | null>(null);
  * @param next
  * @returns
  */
-export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
-  next: HttpHandlerFn) => {
+export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, next: HttpHandlerFn) => {
   const globalStore = inject(GlobalStore);
   const router = inject(Router);
   const authService = inject(AuthService);
@@ -53,7 +52,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
               authService.resetToken();
               globalStore.clearState();
               return throwError(() => error);
-            })
+            }),
           );
         } else {
           return tokenSubject.pipe(
@@ -64,7 +63,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
         }
       }
       return throwError(() => error);
-    })
+    }),
   );
 };
 
@@ -74,14 +73,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>,
 const addToken = (request: HttpRequest<unknown>, token: string): HttpRequest<unknown> => {
   return request.clone({
     setHeaders: {
-      'authorization': 'Bearer ' + token,
+      authorization: 'Bearer ' + token,
     },
   });
-}
-
-
-
-
-
-
-
+};
