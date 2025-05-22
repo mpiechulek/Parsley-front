@@ -7,20 +7,21 @@
 
   <div class="date-wrapper">- Today: {{ currentDate | date: 'EEEE, MMMM d, yyyy' }}</div>
 </div>
-
-@for (meal of mealBoardMeals.meals; track meal.name) {
-  <div class="meal-card-wrapper">
-    <app-meal-card
-      [nutrientData]="meal.mealNutritious"
-      [selectedFoods]="meal.ingredients"
-      [mealId]="meal.id"
-      [title]="meal.name"
-      [foodSearchList]="foodStore.foodShortList()"
-      (deleteMealEvent)="onDeleteMeal($event)"
-      (pickedFoodEvent)="onAddFoodToMeal($event)"
-      (deleteFoodFromMeal)="onDeleteFoodFromMeal($event)"
-      (saveMeal)="onSaveMeals()"
-      (updateMealFoodQuantity)="editFoodQuantity($event)"
-    />
-  </div>
-}
+<mat-accordion [multi]="false">
+  @for (meal of mealBoardMeals.meals; track meal.name) {
+    <div class="meal-card-wrapper">
+      <app-meal-card
+        [nutrientData]="meal.mealNutritious"
+        [selectedFoods]="meal.ingredients"
+        [mealId]="meal.id"
+        [title]="meal.name"
+        [foodSearchList]="foodStore.foodShortList()"
+        (deleteMealEvent)="onDeleteMeal($event)"
+        (pickedFoodEvent)="onAddFoodToMeal($event)"
+        (deleteFoodFromMeal)="onDeleteFoodFromMeal($event)"
+        (saveMeal)="onSaveMeals()"
+        (updateMealFoodQuantity)="editFoodQuantity($event)"
+      />
+    </div>
+  }
+</mat-accordion>

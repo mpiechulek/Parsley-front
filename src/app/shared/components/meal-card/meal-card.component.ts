@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { NutrientsDisplayComponent } from '../nutriens-display/nutrients-display.component';
 import { FoodMealPosition, FoodModel, FoodShortModel } from '@models/food.model';
@@ -22,7 +22,6 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatAccordion,
     SearchBarComponent,
     NutrientsDisplayComponent,
     DeleteButtonsComponent,

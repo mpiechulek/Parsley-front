@@ -9,10 +9,11 @@ import { ApiService } from '@services/api.service';
 import { NutrientsCalculationService } from '@services/nutrients-calculation.service';
 import { MealCardComponent } from '@shared/components/meal-card/meal-card.component';
 import { PageHeaderComponent } from '@shared/components/page-header/page-header.component';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-meal-board',
-  imports: [MealCardComponent, PageHeaderComponent, MatIconModule, MatButtonModule, DatePipe],
+  imports: [MealCardComponent, PageHeaderComponent, MatIconModule, MatButtonModule, DatePipe, MatAccordion],
   templateUrl: './meal-board.component.html',
   styleUrl: './meal-board.component.scss',
 })

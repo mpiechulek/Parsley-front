@@ -3,7 +3,6 @@
 :host {
   width: 1200px;
   height: 100%;
-
   .meal-board {
     &__add-meal {
       display: flex;
@@ -15,6 +14,7 @@
       }
     }
   }
+
   .meal-card-wrapper {
     margin-top: 3rem;
   }

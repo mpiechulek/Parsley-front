@@ -9,7 +9,7 @@
 
   @include mixin.response('xs') {
     flex-direction: column-reverse;
-    width: calc(100vw - 32px);
+    width: calc(100vw - 48px);
   }
 
   mat-form-field {

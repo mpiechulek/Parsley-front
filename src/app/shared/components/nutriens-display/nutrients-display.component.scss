@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    width: 100%;
 
     @include mixin.response('md') {
       grid-template-columns: repeat(1, 1fr);
@@ -35,7 +36,6 @@
 
       @include mixin.response('md') {
         padding: 0;
-        width: calc(100vw - 32px);
       }
 
       // Remove left padding from first column
