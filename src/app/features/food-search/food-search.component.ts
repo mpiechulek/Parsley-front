@@ -18,18 +18,6 @@ export class FoodSearchComponent {
   foodData = signal<FoodModel>({} as FoodModel);
   foodStore = inject(FoodStore);
 
-  //TODO: Refactor to service call
-  // readonly postsResource = httpResource<unknown>(
-  //   {
-  //     url: 'http://localhost:3000/api/v1/nutrition',
-  //     method: 'GET',
-  //   },
-  //   {
-  //     // Optional configuration
-  //     defaultValue: [],
-  //   },
-  // );
-
   /**
    * Get food details
    */

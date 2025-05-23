@@ -1,19 +1,13 @@
-import { MacroNutrients, Minerals, Vitamins } from './food.model';
+import { FoodModel } from './food.model';
 
 // Base food group interface
-export interface FoodGroupBase {
-  age_span: string;
-  source: string;
-  name: string;
-  calories: number;
-  water: number;
-  macroNutrients: MacroNutrients;
-  vitamins: Vitamins;
-  minerals: Minerals;
+export interface FoodGroupBase extends Omit<FoodModel, 'id' | 'glycemic_index'> {
+  age_span?: string;
+  source?: string;
 }
 
 // Main food variants interface
-interface FoodVariants {
+export interface FoodVariants {
   infants: FoodGroupBase;
   children: FoodGroupBase;
   boys: FoodGroupBase;

@@ -1,0 +1,13 @@
+:host {
+  .settings {
+    display: flex;
+    flex-direction: column;
+    &__radio-pick {
+      width: 350px;
+    }
+  }
+
+  .radio-group {
+    display: flex;
+  }
+}

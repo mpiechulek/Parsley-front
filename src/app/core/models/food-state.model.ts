@@ -8,5 +8,7 @@ export interface FoodState {
   dailyMeals: DailyMealsModel;
   dailyNutrition: FoodGroupBase;
   dailyNutritionGroups: NutritionModel;
+  userVariantObject: FoodGroupBase;
+  userVariantName: string | null;
   error: HttpErrorResponse | null;
 }

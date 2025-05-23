@@ -1,1 +1,18 @@
-<p>settings works!</p>
+<app-page-header title="Food Search" />
+<div class="settings">
+  <div class="settings__radio-pick">
+    @if (variants()) {
+      <p>Choose you gender age group</p>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="chosenVariant">
+        @for (variant of variants(); track variant) {
+          <mat-radio-button class="example-radio-button" [value]="variant" (change)="onVariantChange(variant)">{{
+            variant
+          }}</mat-radio-button>
+        }
+      </mat-radio-group>
+    } @else {
+      <p>No variants available for now, pleas check later.</p>
+    }
+  </div>
+  <app-nutrients-display [displayName]="false" [nutrientData]="userVariant" />
+</div>

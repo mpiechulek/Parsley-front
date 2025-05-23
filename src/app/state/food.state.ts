@@ -12,6 +12,8 @@ export const initialFoodState = signalState<FoodState>({
   dailyMeals: {} as DailyMealsModel,
   dailyNutrition: {} as FoodGroupBase,
   dailyNutritionGroups: {} as NutritionModel,
+  userVariantObject: {} as FoodGroupBase,
+  userVariantName: null,
   error: null,
 });
 
@@ -43,7 +45,7 @@ export const FoodStore = signalStore(
           },
         });
       } else {
-        patchState(store, { dailyNutritionGroups: jasonValue });
+        patchState(store, { dailyNutritionGroups: jasonValue[0] });
       }
     },
     getFoodsShortList: (): void => {
@@ -53,6 +55,19 @@ export const FoodStore = signalStore(
         },
       });
     },
+    onChangePersonProfileVariant: (variantName: string): void => {
+      localStorage.setItem('userVariant', variantName);
+      patchState(store, { userVariantName: variantName });
+    },
+    getVariantFromStorage: (): void => {
+      const variantName = localStorage.getItem('userVariant');
+      if (variantName) {
+        patchState(store, { userVariantName: variantName });
+        // patchState(store, {
+        //   userVariantObject: store.dailyNutritionGroups().variants[variantName as keyof FoodVariants],
+        // });
+      }
+    },
     clearState: (): void => {
       patchState(store, initialFoodState);
     },
@@ -61,8 +76,9 @@ export const FoodStore = signalStore(
     },
   })),
   withHooks({
-    onInit: ({ stateInit }): void => {
+    onInit: ({ stateInit, getVariantFromStorage }): void => {
       stateInit();
+      getVariantFromStorage();
     },
     onDestroy: ({ clearState }): void => {
       clearState();
